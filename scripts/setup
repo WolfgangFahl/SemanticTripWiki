@@ -109,13 +109,21 @@ autoinstall() {
 }
 # end of copy of bash_messages
 
+# the trip wiki - per the Bootstrap of https://ebike2026.bitplan.com/wiki/Bootstrap
+CANASTA_DIR="${CANASTA_DIR:-$HOME/canasta}"
+TRIPWIKI_ID="${TRIPWIKI_ID:-tripwiki}"
+TRIPWIKI_HOST="${TRIPWIKI_HOST:-localhost}"
+EXTENSIONS="ParserFunctions,Variables,PageForms,SemanticResultFormats,Maps,HeaderTabs,AdminLinks,Mermaid,Scribunto,MagicNoCache"
+
 #
 # usage - show help
 #
 usage() {
   cat << EOF
 usage: setup [-h|--help]
-   without arguments: check the prerequisites - macOS or Linux, bash, curl, docker - and offer how to install docker if missing
+   without arguments: check the prerequisites - macOS or Linux, bash, curl, docker - and offer how to install docker if missing,
+                      then install the Canasta CLI, create the Canasta instance and enable Semantic MediaWiki
+   environment: CANASTA_DIR (default ~/canasta), TRIPWIKI_ID (default tripwiki), TRIPWIKI_HOST (default localhost)
    -h|--help: show help
 EOF
   exit 1
@@ -198,10 +206,71 @@ check_prereqs() {
 }
 
 #
+# install_canasta - install the Canasta CLI if missing
+# see https://canasta.wiki/wiki/Help:Installation
+#
+install_canasta() {
+  if command -v canasta >/dev/null 2>&1; then
+    success "canasta $(canasta version 2>/dev/null | head -1) is installed"
+    return 0
+  fi
+  action "installing the Canasta CLI from https://get.canasta.wiki"
+  curl -fsSL https://get.canasta.wiki | bash || error "Canasta CLI installation failed"
+  command -v canasta >/dev/null 2>&1 || error "canasta not found on PATH after installation"
+  success "canasta installed"
+}
+
+#
+# create_instance - create the Canasta instance of the trip wiki if missing
+#
+create_instance() {
+  if [[ -d "$CANASTA_DIR/$TRIPWIKI_ID" ]]; then
+    success "Canasta instance $TRIPWIKI_ID exists in $CANASTA_DIR/$TRIPWIKI_ID"
+    return 0
+  fi
+  action "creating Canasta instance $TRIPWIKI_ID at $TRIPWIKI_HOST"
+  mkdir -p "$CANASTA_DIR" || error "can not create $CANASTA_DIR"
+  (cd "$CANASTA_DIR" && canasta create -i "$TRIPWIKI_ID" -w "$TRIPWIKI_ID" -n "$TRIPWIKI_HOST") || error "canasta create failed"
+  success "Canasta instance $TRIPWIKI_ID created - the WikiSysop password is in $CANASTA_DIR/$TRIPWIKI_ID/admin-password_$TRIPWIKI_ID"
+}
+
+#
+# enable_smw - Semantic MediaWiki and the extension set of the trip wiki
+# the settings file comes first since the extension enable runs update.php
+#
+enable_smw() {
+  local l_settings="$CANASTA_DIR/$TRIPWIKI_ID/config/settings/global/SemanticMediaWiki.php"
+  if [[ -f "$l_settings" ]]; then
+    success "Semantic MediaWiki is enabled"
+    return 0
+  fi
+  action "enabling Semantic MediaWiki"
+  mkdir -p "$(dirname "$l_settings")" || error "can not create $(dirname "$l_settings")"
+  cat << EOF > "$l_settings"
+<?php
+wfLoadExtension( 'SemanticMediaWiki' );
+enableSemantics( '$TRIPWIKI_HOST' );
+EOF
+  canasta extension enable "$EXTENSIONS" -i "$TRIPWIKI_ID" || error "enabling the extensions failed"
+  canasta maintenance extension SemanticMediaWiki:rebuildData -i "$TRIPWIKI_ID" || error "SemanticMediaWiki rebuildData failed"
+  success "Semantic MediaWiki and $EXTENSIONS enabled"
+}
+
+#
 # setup - set up the trip wiki
 #
 setup() {
   check_prereqs || exit 1
+  install_canasta
+  create_instance
+  enable_smw
+  local l_code
+  l_code=$(curl -sk -o /dev/null -w "%{http_code}" "https://$TRIPWIKI_HOST/wiki/Main_Page")
+  if [[ "$l_code" == "200" ]]; then
+    success "the trip wiki answers at https://$TRIPWIKI_HOST"
+  else
+    warn "https://$TRIPWIKI_HOST/wiki/Main_Page answers $l_code - check with: canasta list"
+  fi
 }
 
 # no arguments -> setup, as needed for the one line install via curl
