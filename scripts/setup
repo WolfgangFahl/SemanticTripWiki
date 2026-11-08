@@ -401,6 +401,8 @@ upload_images() {
   action "uploading the images of $REPO_DIR/wikibackup/images"
   l_out=$(cd "$REPO_DIR/wikibackup/images" && wikiupload -t "$TRIPWIKI_ID" --files * 2>&1)
   l_rc=$?
+  # an existing file is kept - that is the idempotent case, not an error
+  l_out=$(echo "$l_out" | grep -v "already exists")
   if [[ $l_rc -ne 0 || "$l_out" == *"❌"* || "$l_out" == *"Exception"* ]]; then
     echo "$l_out" | grep -E "❌|Exception" >&2
     error "wikiupload failed"
@@ -415,6 +417,10 @@ create_content() {
   local l_sidif
   case "$TRIPWIKI_CONTENT" in
     wikibackup)
+      # a restart clears the property type cache of the web container and with it
+      # stale change propagation locks of Semantic MediaWiki, see https://ebike2026.bitplan.com/wiki/Bootstrap
+      action "restarting $TRIPWIKI_ID before the restore"
+      canasta restart -i "$TRIPWIKI_ID" >/dev/null 2>&1 || error "canasta restart failed"
       drain_jobs
       action "restoring the pages of $REPO_DIR/wikibackup"
       local l_out
