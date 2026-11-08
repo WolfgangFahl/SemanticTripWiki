@@ -415,17 +415,14 @@ create_content() {
   local l_sidif
   case "$TRIPWIKI_CONTENT" in
     wikibackup)
-      local l_list
-      l_list=$(mktemp)
-      (cd "$REPO_DIR/wikibackup" && find . -name "*.wiki" | sed -e 's|^\./||' -e 's/\.wiki$//' | sort) > "$l_list"
       drain_jobs
-      action "restoring $(wc -l < "$l_list" | tr -d ' ') pages from $REPO_DIR/wikibackup"
+      action "restoring the pages of $REPO_DIR/wikibackup"
       local l_out
       local l_rc
+      # all files of the backup path, see https://github.com/WolfgangFahl/py-3rdparty-mediawiki/issues/44
       # wikirestore exits with 0 on a failed login, so its output is checked
-      l_out=$(wikirestore -t "$TRIPWIKI_ID" --backupPath "$REPO_DIR/wikibackup" --listFile "$l_list" 2>&1)
+      l_out=$(wikirestore -t "$TRIPWIKI_ID" --backupPath "$REPO_DIR/wikibackup" 2>&1)
       l_rc=$?
-      rm -f "$l_list"
       if [[ $l_rc -ne 0 || "$l_out" == *"❌"* || "$l_out" == *"Exception"* ]]; then
         echo "$l_out" | grep -E "❌|Exception" >&2
         error "wikirestore failed"
