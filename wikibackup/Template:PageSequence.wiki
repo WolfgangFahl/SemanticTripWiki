@@ -1,0 +1,73 @@
+<noinclude>__NOCACHE__<!-- THIS FILE IS PROTECTED - smartGENERATOR WILL NOT OVERWRITE IT -->{{TemplateSequence
+|prev=Template:PageBreak
+|next=Template:PdfBook
+}}
+This is the PageSequence template it allows for prev/next style page sequences to displayed with icons. See [[Template:Icon]]
+
+<pre>
+{{PageSequence
+|prev=
+|next=
+|category=
+|categoryIcon=
+}} 	
+</pre>	
+=== example ===
+<pre>
+{{PageSequence|prev=|next=bash|category=tools|categoryIcon=linux}}
+</pre>
+
+{{PageSequence|prev=|next=bash|category=tools|categoryIcon=linux}}
+<pre>
+{{PageSequence
+|prev=Template:Icon
+|next=Template:Link
+|category=Template
+|categoryIcon=file-text-o
+}}
+</pre>
+
+{{PageSequence
+|prev=Template:Icon
+|next=Template:Link
+|category=Template
+|categoryIcon=file-text-o
+}}
+
+= Properties =
+* {{Link|target=Property:PageSequence next}}
+* {{Link|target=Property:PageSequence prev}}
+* {{Link|target=Property:PageSequence category}}
+* {{Link|target=Property:PageSequence categoryIcon}}
+{{NeededFor|ProfiWiki}}
+</noinclude><includeonly>{{#set:
+|PageSequence next={{{next|}}}
+|PageSequence prev={{{prev|}}}
+|PageSequence category=Category:{{{category|}}}
+|PageSequence categoryIcon={{{categoryIcon|}}}
+}}
+<div style="display:table;border-collapse: collapse;"><div style="display: table-row;">
+  <div style="display: table-cell; vertical-align: middle">{{#if: {{{prev|}}}|
+      {{#ifexist: {{{prev}}}
+        |<imgLink img='{{Icon|name=nav_left_blue|title=previous}}'>{{{prev|}}}</imgLink>
+        |<imgLink img='{{Icon|name=nav_left_red|title=previous}}'>{{{prev|}}}</imgLink>}}
+     }}
+  </div>
+  {{#if: {{{category|}}} |
+  <div style="display: table-cell;">
+    <div style="display: table-row;">{{#if: {{{categoryIcon|}}}
+       |<imgLink img='{{Icon|name={{{categoryIcon|}}}|title={{{category|}}}}}'>:Category:{{{category|}}}</imgLink>
+      }}
+    </div>
+    <div style="display: table-row;">{{Icon|name=edit|size=16}}{{Link|target=Special:FormEdit/PageSequence/{{FULLPAGENAME}}|title=edit}}</div>
+  </div>}}
+  <div style="display: table-cell; vertical-align: middle">{{#if: {{{next|}}}
+       |{{#ifexist: {{{next}}}
+          |<imgLink img='{{Icon|name=nav_right_blue|title=next}}'>{{{next|}}}</imgLink>
+          |<imgLink img='{{Icon|name=nav_right_red|title=next}}'>{{{next|}}}</imgLink>
+        }}
+     }}
+   </div>
+</div></div>{{#if: {{{category|}}}
+|{{Category|name={{{category|}}}}}
+}}</includeonly>

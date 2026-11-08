@@ -1,0 +1,7 @@
+<noinclude>{{TemplateSequence|prev=|next=}}
+This template sets
+* {{Link|target=Property:Needed_for}}
+=== Usage ===
+<pre>{{NeededFor|ProfiWiki}}</pre>
+{{NeededFor|ProfiWiki}}
+</noinclude><includeonly>{{#set:|needed_for={{{1|}}}}}[[Category:ProfiWiki]]</includeonly>

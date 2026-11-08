@@ -383,6 +383,32 @@ register_wiki() {
 }
 
 #
+# drain_jobs - run the job queue of the wiki empty
+# Semantic MediaWiki locks property pages while change propagation jobs are pending
+#
+drain_jobs() {
+  action "running the job queue of $TRIPWIKI_ID"
+  canasta maintenance script -i "$TRIPWIKI_ID" runJobs >/dev/null 2>&1 || error "runJobs failed"
+  success "job queue of $TRIPWIKI_ID is empty"
+}
+
+#
+# upload_images - upload the images of the wikibackup, existing files are kept
+#
+upload_images() {
+  local l_out
+  local l_rc
+  action "uploading the images of $REPO_DIR/wikibackup/images"
+  l_out=$(cd "$REPO_DIR/wikibackup/images" && wikiupload -t "$TRIPWIKI_ID" --files * 2>&1)
+  l_rc=$?
+  if [[ $l_rc -ne 0 || "$l_out" == *"❌"* || "$l_out" == *"Exception"* ]]; then
+    echo "$l_out" | grep -E "❌|Exception" >&2
+    error "wikiupload failed"
+  fi
+  success "images uploaded"
+}
+
+#
 # create_content - create the pages of the trip wiki from the repository
 #
 create_content() {
@@ -391,7 +417,8 @@ create_content() {
     wikibackup)
       local l_list
       l_list=$(mktemp)
-      ls "$REPO_DIR/wikibackup" | sed 's/\.wiki$//' > "$l_list"
+      (cd "$REPO_DIR/wikibackup" && find . -name "*.wiki" | sed -e 's|^\./||' -e 's/\.wiki$//' | sort) > "$l_list"
+      drain_jobs
       action "restoring $(wc -l < "$l_list" | tr -d ' ') pages from $REPO_DIR/wikibackup"
       local l_out
       local l_rc
@@ -400,9 +427,10 @@ create_content() {
       l_rc=$?
       rm -f "$l_list"
       if [[ $l_rc -ne 0 || "$l_out" == *"❌"* || "$l_out" == *"Exception"* ]]; then
-        echo "$l_out" | tail -5 >&2
+        echo "$l_out" | grep -E "❌|Exception" >&2
         error "wikirestore failed"
       fi
+      upload_images
       ;;
     ypgen)
       for l_sidif in MetaModel TripContext; do
@@ -414,6 +442,7 @@ create_content() {
       error "TRIPWIKI_CONTENT must be wikibackup or ypgen, not $TRIPWIKI_CONTENT"
       ;;
   esac
+  drain_jobs
   success "content created via $TRIPWIKI_CONTENT"
 }
 

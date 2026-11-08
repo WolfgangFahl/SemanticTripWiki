@@ -1,0 +1,29 @@
+__NOCACHE__
+= SemanticTripWiki =
+A Semantic MediaWiki for the documentation of trips as ordered legs between locations, set up with [https://github.com/WolfgangFahl/SemanticTripWiki SemanticTripWiki], see [https://wiki.bitplan.com/index.php/SemanticTripWiki SemanticTripWiki on wiki.bitplan.com].
+
+= Contexts =
+There are currently {{#ask: [[Concept:Context]]|format=count}} Contexts available:
+{{#ask: [[Concept:Context]]
+|mainlabel=Context
+|?Context name = name
+|?Context purpose = purpose
+|?Context demo = demo
+|?Context since = since
+|?Context updated = updated
+|limit=200
+|sort=Context name
+|order=ascending
+}}
+
+= Topics =
+{{#ask: [[isA::Topic]]
+|mainlabel=Topic
+|? Topic icon#48px
+|? Topic context
+|sort=Topic context,Topic name
+}}
+
+== Getting started ==
+* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents MediaWiki User's Guide]
+* [https://www.semantic-mediawiki.org/wiki/Help:User_manual Semantic MediaWiki user manual]

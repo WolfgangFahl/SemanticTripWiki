@@ -1,0 +1,2 @@
+{{FULLPAGENAME}} is a Property of type [[Has type::Text]] being used internally by {{ProfiWiki}} in the {{Link|target=MetaModel}} Context.
+{{NeededFor|ProfiWiki}}

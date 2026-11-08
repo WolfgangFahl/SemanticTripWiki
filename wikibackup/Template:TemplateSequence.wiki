@@ -1,0 +1,13 @@
+<noinclude>{{TemplateSequence|prev=Template:Sidif|next=Template:TopicWikitasks}}
+This is the TemplateSequence template. It extends the {{Link|target=Template:PageSequence}} template.
+== example ==
+<pre>
+{{TemplateSequence|prev=Template:Sidif|next=Template:TopicWikitasks}}
+</pre>
+{{TemplateSequence|prev=Template:Sidif|next=Template:TopicWikitasks}}{{NeededFor|ProfiWiki}}
+</noinclude><includeonly>{{PageSequence
+|prev={{{prev|}}}
+|next={{{next|}}}
+|category=Template
+|categoryIcon=file-text-o
+}}</includeonly>

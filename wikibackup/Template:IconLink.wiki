@@ -1,0 +1,25 @@
+<noinclude><!-- THIS FILE IS PROTECTED - smartGENERATOR WILL NOT OVERWRITE IT -->__NOCACHE__{{TemplateSequence
+|prev=Template:Icon
+|next=Template:Language
+}}
+This is the "IconLink" template. It uses the ImageLink extension to render clickable Links with an Icon.
+=== Examples ===
+<pre>
+{{IconLink}}
+</pre>
+{{IconLink}}
+<pre>
+{{IconLink|name=download|target=https://www.magicdraw.com/main.php?ts=download_demo&cmd_go_to_login=1&menu=download_demo&back_cmd=cmd_show|title=Magicdraw 18.0 LTR download}}
+</pre>
+{{IconLink|name=download|target=https://www.magicdraw.com/main.php?ts=download_demo&cmd_go_to_login=1&menu=download_demo&back_cmd=cmd_show|title=Magicdraw 18.0 LTR download}}
+<pre>
+{{IconLink|name=cubes|target=Template:PageSequence|title=PageSequence Template}}
+</pre>
+{{IconLink|name=cubes|target=Template:PageSequence|title=PageSequence Template}}
+[[Category:Icon]]{{NeededFor|ProfiWiki}}
+</noinclude><includeonly>{{#ifeq: 
+{{#sub:{{{target|}}}|0|4}} 
+| http 
+|<imgLink img='{{Icon|name={{{name|question_and_answer}}}|title={{{title|}}}}}' title='{{{title|}}}' href='{{{target|http://www.mediawiki.org}}}'></imgLink>
+|<imgLink img='{{Icon|name={{{name|question_and_answer}}}|title={{{title|}}}}}'>{{{target|Main Page}}}</imgLink>
+}}</includeonly>

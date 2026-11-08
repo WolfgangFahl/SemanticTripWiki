@@ -1,0 +1,45 @@
+<noinclude>__NOCACHE__<!-- THIS FILE IS PROTECTED - smartGENERATOR WILL NOT OVERWRITE IT; ebike2026: imgLink of the ImageLink extension and the public_assets path, since MediaWiki 1.43 escapes a raw img tag, see Bootstrap -->{{TemplateSequence
+|prev=Template:HideSideBar
+|next=Template:IconLink
+}}
+This is the template for ProfiWiki stock icons which are derived from https://fortawesome.github.io/Font-Awesome/cheatsheet/
+see [[:Category:Icon]][[Category:Icon]]
+
+=== examples ===
+<pre>
+{{Icon}}
+</pre>
+{{Icon}}
+<pre>
+{{Icon|name=home}}
+</pre>
+{{Icon|name=home}}
+<pre>
+{{Icon|name=home}}
+</pre>
+{{Icon|name=home}}
+<pre>
+{{Icon|name=server}}
+</pre>
+{{Icon|name=server}}
+<pre>
+{{Icon|name=home|style=plain}}
+</pre>
+{{Icon|name=home|style=plain}}
+<pre>
+{{Icon|name=home|size=32}}
+</pre>
+{{Icon|name=home|size=32}}
+
+=== implementation ===
+<source lang='html4strict'>
+<imgLink src="{{SERVER}}{{SCRIPTPATH}}/public_assets/font-awesome/svg/{{{name|question_and_answer}}}.svg" size="{{{size|48}}}" title="{{{name|question_and_answer}}}"/>
+</source>
+[[Category:Template]]</noinclude><includeonly>{{#switch:{{{storemode|}}}
+|none=
+|#default={{#subobject:Icon_name={{{name|question_and_answer}}}
+|Icon style={{{style|shadow}}}
+|Icon size={{{size|48}}}
+}}}}<imgLink src="{{SERVER}}{{SCRIPTPATH}}/public_assets/font-awesome/svg/{{{name|question_and_answer}}}.svg" size="{{{size|48}}}" title="{{{name|question_and_answer}}}"/>{{#switch:{{{viewmode|}}}
+|editable={{Icon|name=edit|size=16}}{{Link|target=Special:FormEdit/Icon/{{FULLPAGENAME}}|title=edit}}}}</includeonly>
+[[Category:ProfiWiki]]

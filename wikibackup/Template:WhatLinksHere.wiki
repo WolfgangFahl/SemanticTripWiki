@@ -1,0 +1,19 @@
+<noinclude>__NOCACHE__<!-- THIS FILE IS PROTECTED - smartGENERATOR WILL NOT OVERWRITE IT -->{{TemplateSequence
+|prev=Template:TopicWikitasks
+|next=Template:Wikitask
+}}
+This template shows all Pages that have a 
+<pre>{{Link|target=...}}</pre> that points to the page using this template or the one given as a parameter
+=== Examples ===
+<pre>
+{{WhatLinksHere}}
+</pre>
+{{WhatLinksHere}}
+<pre>
+{{WhatLinksHere|Concept:Topic}}
+</pre>
+{{WhatLinksHere|Concept:Topic}}{{NeededFor|ProfiWiki}}
+</noinclude><includeonly>
+{{#ask: [[Link target::{{{1|{{FULLPAGENAME}}}}}]]
+|format=ul
+}}</includeonly>

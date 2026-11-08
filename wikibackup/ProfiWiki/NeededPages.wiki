@@ -1,0 +1,9 @@
+= Needed Pages for  ProfiWiki =
+These are the infrastructure pages needed for {{Link|target=ProfiWiki}}
+see {{Link|target=Property:Needed_for}}
+{{#ask:[[Needed_for::ProfiWiki]]
+|mainlabel=page
+|format=table
+|order=page
+}}
+{{NeededFor|ProfiWiki}}

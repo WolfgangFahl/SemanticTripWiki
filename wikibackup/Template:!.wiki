@@ -1,0 +1,6 @@
+<noinclude><!-- THIS FILE IS PROTECTED - smartGENERATOR WILL NOT OVERWRITE IT -->{{TemplateSequence
+|prev=Template:WikiSlide
+|next=Template:Bigstock
+}}
+This is the "!" template. Allows to have a | in a template by using <pre>{{¡}}</pre>{{NeededFor|ProfiWiki}}
+</noinclude><includeonly>|</includeonly>

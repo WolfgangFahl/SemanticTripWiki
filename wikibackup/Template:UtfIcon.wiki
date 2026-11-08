@@ -1,0 +1,22 @@
+<noinclude><!-- THIS FILE IS PROTECTED - smartGENERATOR WILL NOT OVERWRITE IT -->{{TemplateSequence
+|prev=Template:TopicWikitasks
+|next=Template:WhatLinksHere
+}}
+
+This is the Template ''UtfIcon'' it is good for showing arbitrary UTF character symbols
+see e.g.:
+* https://www.utf8icons.com/
+* https://www.w3schools.com/charsets/ref_utf_symbols.asp
+=== usage ===
+<pre>{{UtfIcon|utf=✓}}</pre>
+{{UtfIcon|utf=✓}}
+<pre>{{UtfIcon|utf=🌤|size=24}}</pre>
+{{UtfIcon|utf=🌤|size=24}}
+<pre>{{UtfIcon|utf=Δ|size=36|color=red}}</pre>
+{{UtfIcon|size=36|utf=Δ|color=red}}
+<pre>{{UtfIcon|size=48|color=blue|utf=♞}}</pre>
+{{UtfIcon|size=48|color=blue|utf=♞}}
+<pre>{{UtfIcon|utf=☕|size=96}}</pre>
+{{UtfIcon|utf=☕|size=96}}
+[[Category:Template]][[Category:Icon]]{{NeededFor|ProfiWiki}}
+</noinclude><includeonly><span style='color:{{{color|green}}};font-size:{{{size|24}}}px'>{{{utf|✓}}}</span></includeonly>

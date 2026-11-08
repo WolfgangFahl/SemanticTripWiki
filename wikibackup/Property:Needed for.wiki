@@ -1,0 +1,2 @@
+[[has type::Page]]
+{{NeededFor|ProfiWiki}}
