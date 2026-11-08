@@ -2,7 +2,7 @@
 # WF 2026-11-08
 # setup a Semantic MediaWiki trip documentation wiki
 # one line install:
-#   curl -fsSL https://raw.githubusercontent.com/WolfgangFahl/SemanticTripWiki/main/scripts/setup | bash -s -- --docker
+#   curl -fsSL https://raw.githubusercontent.com/WolfgangFahl/SemanticTripWiki/main/scripts/setup | bash
 
 #
 # copy of $HOME/source/bash/mp/bash_messages WF 2025-11-20
@@ -114,9 +114,9 @@ autoinstall() {
 #
 usage() {
   cat << EOF
-usage: $0 [-h|--help][--docker]
+usage: setup [-h|--help]
+   without arguments: check the prerequisites - macOS or Linux, bash, curl, docker - and offer how to install docker if missing
    -h|--help: show help
-   --docker:  check docker, hint and offer to install it if missing
 EOF
   exit 1
 }
@@ -161,21 +161,45 @@ check_docker() {
       if ask "install docker now?"; then
         autoinstall docker docker.io docker || error "docker installation failed"
         success "docker installed"
+        return 0
       fi
       ;;
     *)
       error "$l_os is not supported - use macOS or Linux"
       ;;
   esac
+  return 1
 }
 
-# no arguments -> usage
-[[ $# -eq 0 ]] && usage
+#
+# check_prereqs - check the prerequisites: macOS or Linux, bash, curl and docker
+#
+check_prereqs() {
+  local l_os
+  l_os=$(uname)
+  case "$l_os" in
+    Darwin|Linux) success "$l_os is supported" ;;
+    *)            error "$l_os is not supported - use macOS or Linux" ;;
+  esac
+  success "bash $BASH_VERSION"
+  command -v curl >/dev/null 2>&1 || error "curl is missing - install it with your package manager"
+  success "curl is installed"
+  check_docker
+}
+
+#
+# setup - set up the trip wiki
+#
+setup() {
+  check_prereqs || exit 1
+}
+
+# no arguments -> setup, as needed for the one line install via curl
+[[ $# -eq 0 ]] && setup
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -h|--help) usage ;;
-    --docker)  check_docker ;;
     *)         usage ;;
   esac
   shift
