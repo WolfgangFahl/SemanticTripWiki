@@ -1,0 +1,182 @@
+#!/bin/bash
+# WF 2026-11-08
+# setup a Semantic MediaWiki trip documentation wiki
+# one line install:
+#   curl -fsSL https://raw.githubusercontent.com/WolfgangFahl/SemanticTripWiki/main/scripts/setup | bash -s -- --docker
+
+#
+# copy of $HOME/source/bash/mp/bash_messages WF 2025-11-20
+# so that this script works standalone via curl
+#
+# ANSI colors
+blue='\033[0;34m'
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[1;33m'
+endColor='\033[0m'
+
+#
+# Display a colored message
+# Args:
+#   $1: color code
+#   $2: message text
+#   $3: optional file descriptor (default 1 for stdout)
+#
+color_msg() {
+  local l_color="$1"
+  local l_msg="$2"
+  local l_fd="${3:-1}"
+  echo -e "${l_color}${l_msg}${endColor}" >&"$l_fd"
+}
+
+#
+# Display an error message (stderr) and optionally exit
+# Args:
+#   $1: error message
+#   $2: exit code (optional, 0 means don't exit, default 1)
+#
+error() {
+  local l_msg="$1"
+  local l_exitcode="${2:-1}"
+  color_msg "$red" "✗ Error: $l_msg" 2
+  if [ "$l_exitcode" -ne 0 ]; then
+    exit "$l_exitcode"
+  fi
+}
+
+#
+# Display a success message
+# Args:
+#   $1: success message
+#
+success() {
+  local l_msg="$1"
+  color_msg "$green" "✓ $l_msg"
+}
+
+#
+# Display an action/info message
+# Args:
+#   $1: action message
+#
+action() {
+  local l_msg="$1"
+  color_msg "$blue" "➜ $l_msg"
+}
+
+#
+# Display a warning message
+# Args:
+#   $1: warning message
+#
+warn() {
+  local l_msg="$1"
+  color_msg "$yellow" "⚠ $l_msg"
+}
+
+#
+# Ensure a program is available; install it if not, using per-OS package manager
+# (MacPorts on Darwin, apt on Linux).
+# Args:
+#   $1: l_prog          - the program that must be available (checked via which)
+#   $2: l_linuxpackage  - the apt package name on Linux
+#   $3: l_macospackage  - the MacPorts package name on Darwin
+# Env:
+#   AUTOINSTALL_HINT_ONLY=1  - do NOT install; print the exact install command
+#                              and error out (used by scripts with --init opt-in)
+#
+autoinstall() {
+  local l_prog="$1"
+  local l_linuxpackage="$2"
+  local l_macospackage="$3"
+  local l_os
+  l_os=$(uname)
+  if command -v "$l_prog" >/dev/null 2>&1; then
+    return 0
+  fi
+  local l_cmd
+  case "$l_os" in
+    Darwin) l_cmd="sudo port install -N $l_macospackage" ;;
+    Linux)  l_cmd="sudo apt-get install -y $l_linuxpackage" ;;
+    *)      error "$l_prog is not installed and $l_os is not supported for autoinstall" ;;
+  esac
+  if [ "${AUTOINSTALL_HINT_ONLY:-0}" = "1" ]; then
+    warn "$l_prog is not installed — install with: $l_cmd"
+    return 1
+  fi
+  action "installing $l_prog: $l_cmd"
+  eval "$l_cmd"
+}
+# end of copy of bash_messages
+
+#
+# usage - show help
+#
+usage() {
+  cat << EOF
+usage: $0 [-h|--help][--docker]
+   -h|--help: show help
+   --docker:  check docker, hint and offer to install it if missing
+EOF
+  exit 1
+}
+
+#
+# ask - ask a yes/no question on the terminal, also when the script is piped via curl
+#   $1: l_question the question to ask
+#
+ask() {
+  local l_question="$1"
+  local l_answer
+  # no terminal - e.g. in CI - counts as no
+  { read -r -p "$l_question [y/N] " l_answer < /dev/tty; } 2>/dev/null || return 1
+  [[ "$l_answer" == "y" || "$l_answer" == "Y" ]]
+}
+
+#
+# check_docker - check docker, hint and offer to install it if missing
+#
+check_docker() {
+  local l_os
+  l_os=$(uname)
+  if command -v docker >/dev/null 2>&1; then
+    if docker info >/dev/null 2>&1; then
+      success "docker $(docker --version | cut -d' ' -f3 | tr -d ',') is installed and running"
+    else
+      warn "docker is installed but the docker engine is not running - start it and run this setup again"
+      return 1
+    fi
+    return 0
+  fi
+  warn "docker is missing - the trip wiki runs as a Canasta instance in docker"
+  case "$l_os" in
+    Darwin)
+      action "install a docker engine for macOS, e.g. OrbStack from https://orbstack.dev or Docker Desktop from https://www.docker.com/products/docker-desktop/"
+      if ask "open the OrbStack download page now?"; then
+        open "https://orbstack.dev/download"
+      fi
+      ;;
+    Linux)
+      AUTOINSTALL_HINT_ONLY=1 autoinstall docker docker.io docker
+      if ask "install docker now?"; then
+        autoinstall docker docker.io docker || error "docker installation failed"
+        success "docker installed"
+      fi
+      ;;
+    *)
+      error "$l_os is not supported - use macOS or Linux"
+      ;;
+  esac
+}
+
+# no arguments -> usage
+[[ $# -eq 0 ]] && usage
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help) usage ;;
+    --docker)  check_docker ;;
+    *)         usage ;;
+  esac
+  shift
+done
