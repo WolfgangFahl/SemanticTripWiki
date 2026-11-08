@@ -233,8 +233,20 @@ port_busy() {
 }
 
 #
+# free_port - echo the first free local port starting at the given one
+#   $1: l_port the port to start with
+#
+free_port() {
+  local l_port="$1"
+  while port_busy "$l_port"; do
+    l_port=$((l_port + 1))
+  done
+  echo "$l_port"
+}
+
+#
 # create_instance - create the Canasta instance of the trip wiki if missing
-# uses ports 80 and 443 if free, otherwise HTTP_PORT and HTTPS_PORT
+# uses ports 80 and 443 if free, otherwise the first free ports from HTTP_PORT and HTTPS_PORT on
 #
 create_instance() {
   if [[ -d "$CANASTA_DIR/$TRIPWIKI_ID" ]]; then
@@ -244,6 +256,8 @@ create_instance() {
   mkdir -p "$CANASTA_DIR" || error "can not create $CANASTA_DIR"
   local l_envfile="$CANASTA_DIR/$TRIPWIKI_ID.env"
   if port_busy 80 || port_busy 443; then
+    HTTP_PORT=$(free_port "$HTTP_PORT")
+    HTTPS_PORT=$(free_port "$HTTPS_PORT")
     warn "ports 80 or 443 are in use - the trip wiki gets ports $HTTP_PORT and $HTTPS_PORT"
   else
     HTTP_PORT=80
