@@ -1,5 +1,4 @@
-"""
-Created on 2026-11-08
+"""Created on 2026-11-08.
 
 @author: wf
 """
@@ -11,17 +10,14 @@ from basemkit.basetest import Basetest
 
 
 class TestSetup(Basetest):
-    """
-    test the bash setup script, the deliverable of the one line install
-    """
+    """Test the bash setup script, the deliverable of the one line install."""
 
     def setUp(self, debug=False, profile=True):
         Basetest.setUp(self, debug=debug, profile=profile)
         self.script = os.path.join(os.path.dirname(__file__), "..", "scripts", "setup")
 
     def run_script(self, *args: str) -> subprocess.CompletedProcess:
-        """
-        run the given command line on the setup script
+        """Run the given command line on the setup script.
 
         Args:
             args: the command line arguments, the first one being the program
@@ -35,9 +31,7 @@ class TestSetup(Basetest):
         return process
 
     def test_syntax(self):
-        """
-        the setup script is valid bash
-        """
+        """The setup script is valid bash."""
         process = self.run_script("bash", "-n", self.script)
         self.assertEqual(0, process.returncode, process.stderr)
 
