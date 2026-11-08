@@ -1,0 +1,19 @@
+{{Property
+|name=primaryKey
+|label=primary key
+|documentation=is this property a primary key of it's topic?
+|type=Special:Types/Boolean
+|index=7
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=4
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Boolean]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

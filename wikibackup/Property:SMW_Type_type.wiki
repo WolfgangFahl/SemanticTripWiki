@@ -1,0 +1,19 @@
+{{Property
+|name=type
+|label=type
+|documentation=The Semantic MediaWiki type  without the prefix e.g. Text, Number, Boolean
+|type=Special:Types/Text
+|index=1
+|primaryKey=True
+|mandatory=True
+|namespace=Property
+|size=50
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:SMW_Type
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

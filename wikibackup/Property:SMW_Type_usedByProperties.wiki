@@ -1,0 +1,19 @@
+{{Property
+|name=usedByProperties
+|label=usedByProperties
+|documentation=the properties having this type
+|type=Special:Types/Page
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=dropdown
+|values_from=Property
+|showInGrid=False
+|isLink=True
+|topic=Concept:SMW_Type
+|storemode=prop
+}}
+* [[Has type::Page]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

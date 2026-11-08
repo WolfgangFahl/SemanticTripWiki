@@ -1,0 +1,21 @@
+{{Property
+|name=type
+|label=type
+|documentation=The type of a Property
+|type=Special:Types/Page
+|index=3
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|defaultValue=Special:Types/Text
+|inputType=dropdown
+|values_from=property=Property_type
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Page]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

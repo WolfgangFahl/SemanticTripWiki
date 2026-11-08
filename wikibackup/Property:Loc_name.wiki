@@ -1,0 +1,18 @@
+{{Property
+|name=name
+|label=name
+|documentation=name of the location
+|type=Special:Types/Text
+|index=2
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Loc
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

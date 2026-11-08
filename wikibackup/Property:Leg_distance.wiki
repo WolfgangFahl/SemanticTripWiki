@@ -1,0 +1,18 @@
+{{Property
+|name=distance
+|label=distance
+|documentation=distance of the leg in km
+|type=Special:Types/Number
+|index=6
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Leg
+|storemode=prop
+}}
+* [[Has type::Number]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

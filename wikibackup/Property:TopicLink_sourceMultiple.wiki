@@ -1,0 +1,19 @@
+{{Property
+|name=sourceMultiple
+|label=sourceMultiple
+|documentation=None
+|type=Special:Types/Boolean
+|index=4
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=50
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:TopicLink
+|storemode=prop
+}}
+* [[Has type::Boolean]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

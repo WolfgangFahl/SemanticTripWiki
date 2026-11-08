@@ -1,0 +1,92 @@
+<noinclude>
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Form for "Leg".
+
+Create a new Leg by entering a new pagetitle for a Leg
+into the field below.
+
+If you enter an existing Leg pagetitle - you will edit the Leg
+with that pagetitle.
+{{#forminput:form=Leg|values from concept=Leg}}
+
+=== see also ===
+see also
+* [[List of Legs]]
+* [[Help:Leg]]
+* [[Concept:Leg]]
+* [[:Category:Leg]]
+* [[:Template:Leg]]
+* [[:Form:Leg]]
+
+</noinclude><includeonly><div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{section|Leg|level=1|hidden}}}
+=Leg=
+{{{for template|Leg|multiple}}}
+{| class="wikitable"
+! colspan='2' | Leg
+|-
+! num:
+<!-- Number num -->
+|{{{field|num|property=Leg num|mandatory}}}
+|-
+! date:
+<!-- Date date -->
+|{{{field|date|property=Leg date|input type=datepicker}}}
+|-
+! from:
+<!-- Text from -->
+|{{{field|from|property=Leg from|mandatory}}}
+|-
+! to:
+<!-- Text to -->
+|{{{field|to|property=Leg to|mandatory}}}
+|-
+! transport:
+<!-- Text transport -->
+|{{{field|transport|property=Leg transport|input type=radiobutton|mandatory|values=bike,train,ferry,bus,car,plane,walk}}}
+|-
+! distance:
+<!-- Number distance -->
+|{{{field|distance|property=Leg distance}}}
+|-
+! duration:
+<!-- Text duration -->
+|{{{field|duration|property=Leg duration}}}
+|-
+! operator:
+<!-- Text operator -->
+|{{{field|operator|property=Leg operator}}}
+|-
+! booking:
+<!-- URL booking -->
+|{{{field|booking|property=Leg booking}}}
+|-
+! track:
+<!-- External identifier track -->
+|{{{field|track|property=Leg track}}}
+|-
+! stay:
+<!-- Text stay -->
+|{{{field|stay|property=Leg stay}}}
+|-
+! notes:
+<!-- Text notes -->
+|{{{field|notes|property=Leg notes|input type=textarea|editor=wikieditor}}}
+|-
+|-
+|}
+{{{field|storemode|default=subobject|hidden}}}
+{{{end template}}}
+<!-- Leg -->
+        
+
+{{{section|Freitext|level=1|hidden}}}
+=Freitext=
+{{{standard input|free text|rows=10}}}
+
+{{{standard input|summary}}}
+{{{standard input|changes}}}
+
+{{{standard input|save}}}
+{{{standard input|cancel}}}
+</includeonly>
+        

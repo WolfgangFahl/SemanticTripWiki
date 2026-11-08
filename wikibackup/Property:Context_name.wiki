@@ -1,0 +1,20 @@
+{{Property
+|name=name
+|label=name
+|documentation=Name of the context
+|type=Special:Types/Text
+|index=1
+|sortPos=1
+|primaryKey=True
+|mandatory=True
+|namespace=Property
+|size=80
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Context
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

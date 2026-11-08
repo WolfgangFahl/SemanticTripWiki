@@ -1,0 +1,19 @@
+{{Property
+|name=pluralName
+|label=pluralName
+|documentation=The plural of a topic name. E.g. for the topic 'City' the pluralName is 'Cities'. If no pluralName is specified an 's' is appended. E.g. for the topic 'Book' the default pluralName is 'Books'
+|type=Special:Types/Text
+|index=2
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=50
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Topic
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

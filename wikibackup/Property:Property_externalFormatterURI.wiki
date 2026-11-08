@@ -1,0 +1,19 @@
+{{Property
+|name=externalFormatterURI
+|label=external formatter URI
+|documentation=see https://www.semantic-mediawiki.org/wiki/Help:Special_property_External_formatter_URI<br>When using this property the type of the property should be set to https://www.semantic-mediawiki.org/wiki/Help:Type_External_identifier automatically by the generator
+|type=Special:Types/Text
+|index=17
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=200
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

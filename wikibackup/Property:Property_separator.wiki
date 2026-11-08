@@ -1,0 +1,19 @@
+{{Property
+|name=separator
+|label=separator
+|documentation=[https://www.semantic-mediawiki.org/wiki/Help:Setting_values/Working_with_the_separator_parameter separator parameter] to be used in SMW #set for a multi value property - if no separator is given a single value is assumed
+|type=Special:Types/Text
+|index=22
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=5
+|uploadable=False
+|showInGrid=False
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

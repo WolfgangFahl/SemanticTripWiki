@@ -1,0 +1,21 @@
+{{Property
+|name=scope
+|label=scope
+|documentation=The scope of the property
+|type=Special:Types/Text
+|index=4
+|primaryKey=False
+|mandatory=True
+|namespace=Property
+|size=50
+|uploadable=False
+|inputType=dropdown
+|allowedValues=Root,Override,Global
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

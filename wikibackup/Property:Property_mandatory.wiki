@@ -1,0 +1,21 @@
+{{Property
+|name=mandatory
+|label=mandatory
+|documentation=Specifies that this field must be filled in by the user. Note: mandatory should not be used in conjunction with hidden. Use of both in any field will cause the mandatory check on any field to fail when the form is saved.
+
+see http://www.mediawiki.org/wiki/Extension:Semantic_Forms/Defining_forms#.27field.27_tag
+|type=Special:Types/Boolean
+|index=8
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=4
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Boolean]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

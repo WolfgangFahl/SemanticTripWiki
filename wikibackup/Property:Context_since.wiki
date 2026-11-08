@@ -1,0 +1,19 @@
+{{Property
+|name=since
+|label=since
+|documentation=since when is this context available?
+|type=Special:Types/Date
+|index=3
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=datepicker
+|showInGrid=True
+|isLink=False
+|topic=Concept:Context
+|storemode=prop
+}}
+* [[Has type::Date]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

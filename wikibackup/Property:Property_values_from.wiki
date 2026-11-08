@@ -1,0 +1,28 @@
+{{Property
+|name=values_from
+|label=values from
+|documentation=Specifies where to get the possible values to be displayed in a form from see
+http://www.mediawiki.org/wiki/Extension:Semantic_Forms/Defining_forms#.27field.27_tag
+
+* values from property=property name - Similar to values=, but gets its values from the the set of all values that a certain SMW property points to.
+* values from category=category name - Similar to values=, but gets its values from the names of all pages belonging to a specific category.
+* values from concept=concept name - Similar to values=, but gets its values from the names of all pages belonging to a specific concept.
+* values from namespace=namespace name - Similar to values=, but gets its values from the names of all pages belonging to a specific namespace. (To get values from the main namespace, use 'Main' for the namespace name, or just leave it blank.)
+* values from url=URL identifier - Used only for autocompletion. Specifies that autocompletion should be based on the values retrieved from an outside URL; see Autocompleting on outside values for how to do this.
+* values from external data=variable name - Used for autocompletion. You need to have theExternal Data extension installed to be able to use this parameter. It specifies that autocompletion should be based on the data retrieved from an outside source. A large number of data sources are supported, including web APIs, regular wiki pages, files on the local server, databases and LDAP directories. See Autocompletion using External Data.
+|type=Special:Types/Code
+|index=16
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=200
+|uploadable=False
+|inputType=textarea
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Code]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

@@ -1,0 +1,21 @@
+{{Property
+|name=engine
+|label=engine
+|documentation=the processing engine to be used either [[Rythm]] or [[Freemarker]]
+|type=Special:Types/Text
+|index=8
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|defaultValue=rythm
+|inputType=radiobutton
+|allowedValues=ai,rythm,freemarker
+|showInGrid=True
+|isLink=False
+|topic=Concept:Action
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

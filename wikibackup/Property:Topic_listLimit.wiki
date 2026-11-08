@@ -1,0 +1,20 @@
+{{Property
+|name=listLimit
+|label=list Limit
+|documentation=What is the default #ask list limit for this Topic?
+|type=Special:Types/Number
+|index=10
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=4
+|uploadable=False
+|defaultValue=200
+|showInGrid=True
+|isLink=False
+|topic=Concept:Topic
+|storemode=prop
+}}
+* [[Has type::Number]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

@@ -1,0 +1,59 @@
+from dataclasses import dataclass
+from typing import Optional
+import dacite
+@dataclass
+class Trip:
+    """
+    A trip from a start location to a destination consisting of ordered legs
+    """
+    pageTitle:str
+    name:Optional[str] # short name of the trip used as page name e.g. BariLjubljana2026
+    title:Optional[str] # human readable title of the trip
+    from:Optional[str] # id of the start location of the trip
+    to:Optional[str] # id of the destination of the trip
+    start:Optional[str] # first day of the trip
+    end:Optional[str] # last day of the trip
+    participants:Optional[str] # who travels
+    status:Optional[str] # planning state of the trip
+    source:Optional[str] # url of the source the trip is derived from e.g. a YouTube playlist or a travel blog
+    description:Optional[str] # description of the trip
+
+    @classmethod
+    def askQuery(cls):
+        """
+        get the ask Query for Trip
+
+        Returns:
+            str: the mediawiki markup for the ask query
+        """
+        ask="""{{#ask: [[Concept:Trip]]
+|mainlabel=pageTitle
+|?Trip name = name
+|?Trip title = title
+|?Trip from = from
+|?Trip to = to
+|?Trip start = start
+|?Trip end = end
+|?Trip participants = participants
+|?Trip status = status
+|?Trip source = source
+|?Trip description = description
+|limit=10000
+|format=table
+}}"""
+        return ask
+
+    @classmethod
+    def fromDict(cls,data:dict):
+        """
+        create a Trip from the given dict
+
+        Args:
+            data(dict): the dict to create the Trip from
+
+        Returns:
+            Trip: the freshly created Trip
+        """
+        trip=dacite.from_dict(data_class=cls,data=data)
+        return trip
+        

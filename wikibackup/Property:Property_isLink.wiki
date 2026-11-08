@@ -1,0 +1,18 @@
+{{Property
+|name=isLink
+|label=isLink
+|documentation=true if this Property is derived form a Link. It will not be exported to SiDIF separately and automatically be added by the Property Generator
+|type=Special:Types/Boolean
+|index=19
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=False
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Boolean]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

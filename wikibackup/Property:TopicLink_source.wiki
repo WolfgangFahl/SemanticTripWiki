@@ -1,0 +1,21 @@
+{{Property
+|name=source
+|label=source
+|documentation=the source of a topic Link
+|type=Special:Types/Page
+|index=2
+|primaryKey=False
+|mandatory=True
+|namespace=Property
+|size=50
+|uploadable=False
+|inputType=dropdown
+|values_from=concept=Topic
+|showInGrid=True
+|isLink=False
+|topic=Concept:TopicLink
+|storemode=prop
+}}
+* [[Has type::Page]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

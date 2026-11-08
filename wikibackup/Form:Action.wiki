@@ -1,0 +1,96 @@
+<noinclude>
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Form for "Action".
+
+Create a new Action by entering a new pagetitle for a Action
+into the field below.
+
+If you enter an existing Action pagetitle - you will edit the Action
+with that pagetitle.
+{{#forminput:form=Action|values from concept=Action}}
+
+=== see also ===
+see also
+* [[List of Actions]]
+* [[Help:Action]]
+* [[Concept:Action]]
+* [[:Category:Action]]
+* [[:Template:Action]]
+* [[:Form:Action]]
+
+</noinclude><includeonly><div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{section|Action|level=1|hidden}}}
+=Action=
+{{{for template|Action|multiple}}}
+{| class="wikitable"
+! colspan='2' | Action
+|-
+! purpose:
+<!-- Text purpose -->
+|{{{field|purpose|property=Action purpose}}}
+|-
+! servicetype:
+<!-- Text servicetype -->
+|{{{field|servicetype|property=Action servicetype|input type=radiobutton|mandatory|values=Agent,WikiTask|default=Agent}}}
+|-
+! service:
+<!-- URL service -->
+|{{{field|service|property=Action service}}}
+|-
+! inputtype:
+<!-- Text inputtype -->
+|{{{field|inputtype|property=Action inputtype|input type=radiobutton|values=Query,Page,URL|default=Page}}}
+|-
+! input:
+<!-- Code input -->
+|{{{field|input|property=Action input|input type=textarea|editor=wikieditor|size=300}}}
+|-
+! actionpage:
+<!-- Page actionpage -->
+|{{{field|actionpage|property=Action actionpage|default=Property:Action actionpage}}}
+|-
+! output:
+<!-- Code output -->
+|{{{field|output|property=Action output|input type=textarea|editor=wikieditor|size=300}}}
+|-
+! engine:
+<!-- Text engine -->
+|{{{field|engine|property=Action engine|input type=radiobutton|values=ai,rythm,freemarker|default=rythm}}}
+|-
+! author:
+<!-- Page author -->
+|{{{field|author|property=Action author|input type=combobox|values from=namespace=User}}}
+|-
+! since:
+<!-- Date since -->
+|{{{field|since|property=Action since|input type=datepicker}}}
+|-
+! comment:
+<!-- Text comment -->
+|{{{field|comment|property=Action comment|input type=textarea|editor=wikieditor|size=400}}}
+|-
+! agent:
+<!-- Page agent -->
+|{{{field|agent|property=Action agent|input type=combobox|values from=concept=Agent}}}
+|-
+! name:
+<!-- Text name -->
+|{{{field|name|property=Action name|mandatory}}}
+|-
+|-
+|}
+{{{field|storemode|default=subobject|hidden}}}
+{{{end template}}}
+<!-- Action -->
+        
+
+{{{section|Freitext|level=1|hidden}}}
+=Freitext=
+{{{standard input|free text|rows=10}}}
+
+{{{standard input|summary}}}
+{{{standard input|changes}}}
+
+{{{standard input|save}}}
+{{{standard input|cancel}}}
+</includeonly>
+        

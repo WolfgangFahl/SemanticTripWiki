@@ -1,0 +1,88 @@
+<noinclude><!--
+  --     Copyright (C) 2015-2026 BITPlan GmbH
+  --
+  --     Pater-Delp-Str. -- 1
+  --     D-47877 -- Willich-Schiefbahn
+  --
+  --     http://www.bitplan.com
+  --
+  --
+-->
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Template for "SMW_Type".
+=== see also ===
+see also
+* [[List of SMW_Types]]
+* [[Help:SMW_Type]]
+* [[Concept:SMW_Type]]
+* [[:Category:SMW_Type]]
+* [[:Template:SMW_Type]]
+* [[:Form:SMW_Type]]
+
+=== Usage ===
+<pre>{{SMW_Type
+|type=
+|documentation=
+|id=
+|helppage=
+|typepage=
+|javaType=
+|usedByProperties=
+|storemode=property or subobject or none"
+}}
+</pre>
+[[Category:Template]]
+</noinclude><includeonly>{{#switch:{{{storemode|}}}
+|none=
+|subobject={{#subobject:{{{type|}}}
+|isA=SMW_Type
+|SMW_Type type={{{type|}}}
+|SMW_Type documentation={{{documentation|}}}
+|SMW_Type id={{{id|}}}
+|SMW_Type helppage={{{helppage|}}}
+|SMW_Type typepage={{{typepage|}}}
+|SMW_Type javaType={{{javaType|}}}
+|SMW_Type usedByProperties={{{usedByProperties|}}}
+}}
+|#default={{#set:
+|isA=SMW_Type
+|SMW_Type type={{{type|}}}
+|SMW_Type documentation={{{documentation|}}}
+|SMW_Type id={{{id|}}}
+|SMW_Type helppage={{{helppage|}}}
+|SMW_Type typepage={{{typepage|}}}
+|SMW_Type javaType={{{javaType|}}}
+|SMW_Type usedByProperties={{{usedByProperties|}}}
+}}
+}}
+{{#switch:{{{viewmode|}}}|hidden=|masterdetail=
+|#default={{{!}} class='wikitable'
+! colspan='2' {{!}}SMW_Type
+{{!}}-
+{{#switch:{{{storemode|}}}|property=
+! colspan='2' style='text-align:left' {{!}} {{Icon|name=edit|size=24}}{{Link|target=Special:FormEdit/SMW_Type/{{FULLPAGENAME}}|title=edit}}
+{{!}}-
+}}
+![[Property:SMW_Type type|type]]
+{{!}}&nbsp;{{#if:{{{type|}}}|{{{type}}}|}}
+{{!}}-
+![[Property:SMW_Type documentation|documentation]]
+{{!}}&nbsp;{{#if:{{{documentation|}}}|{{{documentation}}}|}}
+{{!}}-
+![[Property:SMW_Type id|id]]
+{{!}}&nbsp;{{#if:{{{id|}}}|{{{id}}}|}}
+{{!}}-
+![[Property:SMW_Type helppage|helppage]]
+{{!}}&nbsp;{{#if:{{{helppage|}}}|{{{helppage}}}|}}
+{{!}}-
+![[Property:SMW_Type typepage|typepage]]
+{{!}}&nbsp;{{#if:{{{typepage|}}}|{{{typepage}}}|}}→[[{{{typepage|}}}]]
+{{!}}-
+![[Property:SMW_Type javaType|javaType]]
+{{!}}&nbsp;{{#if:{{{javaType|}}}|{{{javaType}}}|}}
+{{!}}-
+![[Property:SMW_Type usedByProperties|usedByProperties]]
+{{!}}&nbsp;{{#if:{{{usedByProperties|}}}|{{{usedByProperties}}}|}}→{{#show: {{FULLPAGENAME}}|?SMW_Type usedByProperties}}
+{{!}}-
+{{!}}}
+}}
+</includeonly>

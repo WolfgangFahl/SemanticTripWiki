@@ -1,0 +1,84 @@
+<noinclude>
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Form for "Trip".
+
+Create a new Trip by entering a new pagetitle for a Trip
+into the field below.
+
+If you enter an existing Trip pagetitle - you will edit the Trip
+with that pagetitle.
+{{#forminput:form=Trip|values from concept=Trip}}
+
+=== see also ===
+see also
+* [[List of Trips]]
+* [[Help:Trip]]
+* [[Concept:Trip]]
+* [[:Category:Trip]]
+* [[:Template:Trip]]
+* [[:Form:Trip]]
+
+</noinclude><includeonly><div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{section|Trip|level=1|hidden}}}
+=Trip=
+{{{for template|Trip}}}
+{| class="wikitable"
+! colspan='2' | Trip
+|-
+! name:
+<!-- Text name -->
+|{{{field|name|property=Trip name|mandatory}}}
+|-
+! title:
+<!-- Text title -->
+|{{{field|title|property=Trip title}}}
+|-
+! from:
+<!-- Text from -->
+|{{{field|from|property=Trip from|mandatory}}}
+|-
+! to:
+<!-- Text to -->
+|{{{field|to|property=Trip to|mandatory}}}
+|-
+! start:
+<!-- Date start -->
+|{{{field|start|property=Trip start|input type=datepicker}}}
+|-
+! end:
+<!-- Date end -->
+|{{{field|end|property=Trip end|input type=datepicker}}}
+|-
+! participants:
+<!-- Text participants -->
+|{{{field|participants|property=Trip participants}}}
+|-
+! status:
+<!-- Text status -->
+|{{{field|status|property=Trip status|input type=radiobutton|values=planned,ongoing,done}}}
+|-
+! source:
+<!-- URL source -->
+|{{{field|source|property=Trip source}}}
+|-
+! description:
+<!-- Text description -->
+|{{{field|description|property=Trip description|input type=textarea|editor=wikieditor}}}
+|-
+|-
+|}
+{{{field|storemode|default=property|hidden}}}
+{{{end template}}}
+<!-- Trip -->
+        
+
+{{{section|Freitext|level=1|hidden}}}
+=Freitext=
+{{{standard input|free text|rows=10}}}
+
+{{{standard input|summary}}}
+{{{standard input|changes}}}
+
+{{{standard input|save}}}
+{{{standard input|cancel}}}
+</includeonly>
+        

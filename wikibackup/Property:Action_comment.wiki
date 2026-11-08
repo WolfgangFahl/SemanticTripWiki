@@ -1,0 +1,20 @@
+{{Property
+|name=comment
+|label=comment
+|documentation=a comment for the action
+|type=Special:Types/Text
+|index=11
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=400
+|uploadable=False
+|inputType=textarea
+|showInGrid=True
+|isLink=False
+|topic=Concept:Action
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

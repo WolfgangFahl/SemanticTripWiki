@@ -1,0 +1,30 @@
+__NOCACHE__
+{{#ask: [[Topic name::Leg]]
+|mainlabel=-
+|?Topic icon = icon
+|? = Topic
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic documentation = documentation
+}}
+
+== Legs ==
+{{#ask: [[Concept:Leg]]|format=count}}
+{{#forminput:form=Leg|button text=add Leg}}
+{{#ask: [[Concept:Leg]]
+|mainlabel=Leg
+|?Leg num = num
+|?Leg date = date
+|?Leg from = from
+|?Leg to = to
+|?Leg transport = transport
+|?Leg distance = distance
+|?Leg duration = duration
+|?Leg operator = operator
+|?Leg track = track
+|?Leg stay = stay
+|limit=200
+|format=table
+}}
+[[:Category:Leg]]
+    

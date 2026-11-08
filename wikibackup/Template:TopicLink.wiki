@@ -1,0 +1,112 @@
+<noinclude><!--
+  --     Copyright (C) 2015-2026 BITPlan GmbH
+  --
+  --     Pater-Delp-Str. -- 1
+  --     D-47877 -- Willich-Schiefbahn
+  --
+  --     http://www.bitplan.com
+  --
+  --
+-->
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Template for "TopicLink".
+=== see also ===
+see also
+* [[List of TopicLinks]]
+* [[Help:TopicLink]]
+* [[Concept:TopicLink]]
+* [[:Category:TopicLink]]
+* [[:Template:TopicLink]]
+* [[:Form:TopicLink]]
+
+=== Usage ===
+<pre>{{TopicLink
+|name=
+|source=
+|sourceRole=
+|sourceMultiple=
+|sourceDocumentation=
+|target=
+|targetRole=
+|targetMultiple=
+|targetDocumentation=
+|separator=
+|masterDetail=
+|storemode=property or subobject or none"
+}}
+</pre>
+[[Category:Template]]
+</noinclude><includeonly>{{#switch:{{{storemode|}}}
+|none=
+|subobject={{#subobject:-
+|isA=TopicLink
+|TopicLink name={{{name|}}}
+|TopicLink source={{{source|}}}
+|TopicLink sourceRole={{{sourceRole|}}}
+|TopicLink sourceMultiple={{{sourceMultiple|}}}
+|TopicLink sourceDocumentation={{{sourceDocumentation|}}}
+|TopicLink target={{{target|}}}
+|TopicLink targetRole={{{targetRole|}}}
+|TopicLink targetMultiple={{{targetMultiple|}}}
+|TopicLink targetDocumentation={{{targetDocumentation|}}}
+|TopicLink separator={{{separator|}}}
+|TopicLink masterDetail={{{masterDetail|}}}
+}}
+|#default={{#set:
+|isA=TopicLink
+|TopicLink name={{{name|}}}
+|TopicLink source={{{source|}}}
+|TopicLink sourceRole={{{sourceRole|}}}
+|TopicLink sourceMultiple={{{sourceMultiple|}}}
+|TopicLink sourceDocumentation={{{sourceDocumentation|}}}
+|TopicLink target={{{target|}}}
+|TopicLink targetRole={{{targetRole|}}}
+|TopicLink targetMultiple={{{targetMultiple|}}}
+|TopicLink targetDocumentation={{{targetDocumentation|}}}
+|TopicLink separator={{{separator|}}}
+|TopicLink masterDetail={{{masterDetail|}}}
+}}
+}}
+{{#switch:{{{viewmode|}}}|hidden=|masterdetail=
+|#default={{{!}} class='wikitable'
+! colspan='2' {{!}}TopicLink
+{{!}}-
+{{#switch:{{{storemode|}}}|property=
+! colspan='2' style='text-align:left' {{!}} {{Icon|name=edit|size=24}}{{Link|target=Special:FormEdit/TopicLink/{{FULLPAGENAME}}|title=edit}}
+{{!}}-
+}}
+![[Property:TopicLink name|name]]
+{{!}}&nbsp;{{#if:{{{name|}}}|{{{name}}}|}}
+{{!}}-
+![[Property:TopicLink source|source]]
+{{!}}&nbsp;{{#if:{{{source|}}}|{{{source}}}|}}→[[{{{source|}}}]]
+{{!}}-
+![[Property:TopicLink sourceRole|sourceRole]]
+{{!}}&nbsp;{{#if:{{{sourceRole|}}}|{{{sourceRole}}}|}}
+{{!}}-
+![[Property:TopicLink sourceMultiple|sourceMultiple]]
+{{!}}&nbsp;{{#if:{{{sourceMultiple|}}}|{{{sourceMultiple}}}|}}
+{{!}}-
+![[Property:TopicLink sourceDocumentation|sourceDocumentation]]
+{{!}}&nbsp;{{#if:{{{sourceDocumentation|}}}|{{{sourceDocumentation}}}|}}
+{{!}}-
+![[Property:TopicLink target|target]]
+{{!}}&nbsp;{{#if:{{{target|}}}|{{{target}}}|}}→[[{{{target|}}}]]
+{{!}}-
+![[Property:TopicLink targetRole|targetRole]]
+{{!}}&nbsp;{{#if:{{{targetRole|}}}|{{{targetRole}}}|}}
+{{!}}-
+![[Property:TopicLink targetMultiple|targetMultiple]]
+{{!}}&nbsp;{{#if:{{{targetMultiple|}}}|{{{targetMultiple}}}|}}
+{{!}}-
+![[Property:TopicLink targetDocumentation|targetDocumentation]]
+{{!}}&nbsp;{{#if:{{{targetDocumentation|}}}|{{{targetDocumentation}}}|}}
+{{!}}-
+![[Property:TopicLink separator|separator]]
+{{!}}&nbsp;{{#if:{{{separator|}}}|{{{separator}}}|}}
+{{!}}-
+![[Property:TopicLink masterDetail|masterDetail]]
+{{!}}&nbsp;{{#if:{{{masterDetail|}}}|{{{masterDetail}}}|}}
+{{!}}-
+{{!}}}
+}}
+</includeonly>

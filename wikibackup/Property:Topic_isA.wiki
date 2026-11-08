@@ -1,0 +1,18 @@
+{{Property
+|name=isA
+|label=isA
+|documentation=The metamodel kind of the topic
+|type=Special:Types/Text
+|index=3
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Topic
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

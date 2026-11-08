@@ -1,0 +1,31 @@
+__NOCACHE__
+{{#ask: [[Topic name::Topic]]
+|mainlabel=-
+|?Topic icon = icon
+|? = Topic
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic documentation = documentation
+}}
+
+== Topics ==
+{{#ask: [[Concept:Topic]]|format=count}}
+{{#forminput:form=Topic|button text=add Topic}}
+{{#ask: [[Concept:Topic]]
+|mainlabel=Topic
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic isA = isA
+|?Topic extends = extends
+|?Topic documentation = documentation
+|?Topic wikiDocumentation = wikiDocumentation
+|?Topic defaultstoremode = defaultstoremode
+|?Topic listLimit = listLimit
+|?Topic headerTabs = headerTabs
+|limit=200
+|format=table
+|sort=Topic name
+|order=ascending
+}}
+[[:Category:Topic]]
+    

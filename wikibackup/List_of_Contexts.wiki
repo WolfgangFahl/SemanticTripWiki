@@ -1,0 +1,29 @@
+__NOCACHE__
+{{#ask: [[Topic name::Context]]
+|mainlabel=-
+|?Topic icon = icon
+|? = Topic
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic documentation = documentation
+}}
+
+== Contexts ==
+{{#ask: [[Concept:Context]]|format=count}}
+{{#forminput:form=Context|button text=add Context}}
+{{#ask: [[Concept:Context]]
+|mainlabel=Context
+|?Context name = name
+|?Context purpose = purpose
+|?Context since = since
+|?Context updated = updated
+|?Context copyright = copyright
+|?Context demo = demo
+|?Context master = master
+|limit=200
+|format=table
+|sort=Context name
+|order=ascending
+}}
+[[:Category:Context]]
+    

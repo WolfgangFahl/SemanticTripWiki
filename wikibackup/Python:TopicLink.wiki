@@ -1,0 +1,67 @@
+from dataclasses import dataclass
+from typing import Optional
+import dacite
+@dataclass
+class TopicLink:
+    """
+    A TopicLink links two Concepts
+    """
+    pageTitle:str
+    name:Optional[str] # The name of the topic link
+    source:Optional[str] # the source of a topic Link
+    sourceRole:Optional[str] # None
+    sourceMultiple:Optional[bool] # None
+    sourceDocumentation:Optional[str] # Documentation for the source Role
+    target:Optional[str] # None
+    targetRole:Optional[str] # None
+    targetMultiple:Optional[bool] # None
+    targetDocumentation:Optional[str] # Documentation for the target Role
+    separator:Optional[str] # [https://www.semantic-mediawiki.org/wiki/Help:Setting_values/Working_with_the_separator_parameter separator parameter] to be used in [https://www.semantic-mediawiki.org/wiki/Help:Setting_values/Working_with_the_separator_parameter SMW #set] - no separator is given subobjects are assumed
+    masterDetail:Optional[bool] # should the details be displayed in the same form and template?
+If no 
+* for a 1:1 link there will be a linking attribute used and that can be selected. 
+* for a 1:n link a link to the list of neighbours will be displayed
+if yes
+* for a 1:1 link the details
+* for a 1:n link
+
+    @classmethod
+    def askQuery(cls):
+        """
+        get the ask Query for TopicLink
+
+        Returns:
+            str: the mediawiki markup for the ask query
+        """
+        ask="""{{#ask: [[Concept:TopicLink]]
+|mainlabel=pageTitle
+|?TopicLink name = name
+|?TopicLink source = source
+|?TopicLink sourceRole = sourceRole
+|?TopicLink sourceMultiple = sourceMultiple
+|?TopicLink sourceDocumentation = sourceDocumentation
+|?TopicLink target = target
+|?TopicLink targetRole = targetRole
+|?TopicLink targetMultiple = targetMultiple
+|?TopicLink targetDocumentation = targetDocumentation
+|?TopicLink separator = separator
+|?TopicLink masterDetail = masterDetail
+|limit=10000
+|format=table
+}}"""
+        return ask
+
+    @classmethod
+    def fromDict(cls,data:dict):
+        """
+        create a TopicLink from the given dict
+
+        Args:
+            data(dict): the dict to create the TopicLink from
+
+        Returns:
+            TopicLink: the freshly created TopicLink
+        """
+        topiclink=dacite.from_dict(data_class=cls,data=data)
+        return topiclink
+        

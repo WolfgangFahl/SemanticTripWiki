@@ -1,0 +1,40 @@
+__NOCACHE__
+{{#ask: [[Topic name::Property]]
+|mainlabel=-
+|?Topic icon = icon
+|? = Topic
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic documentation = documentation
+}}
+
+== Properties ==
+{{#ask: [[Concept:Property]]|format=count}}
+{{#forminput:form=Property|button text=add Property}}
+{{#ask: [[Concept:Property]]
+|mainlabel=Property
+|?Property name = name
+|?Property label = label
+|?Property type = type
+|?Property scope = scope
+|?Property index = index
+|?Property sortPos = sortPos
+|?Property primaryKey = primaryKey
+|?Property mandatory = mandatory
+|?Property namespace = namespace
+|?Property size = size
+|?Property uploadable = uploadable
+|?Property defaultValue = defaultValue
+|?Property inputType = inputType
+|?Property allowedValues = allowedValues
+|?Property documentation = documentation
+|?Property values_from = values_from
+|?Property externalFormatterURI = externalFormatterURI
+|?Property showInGrid = showInGrid
+|limit=200
+|format=table
+|sort=Property name
+|order=ascending
+}}
+[[:Category:Property]]
+    

@@ -1,0 +1,100 @@
+<noinclude><!--
+  --     Copyright (C) 2015-2026 BITPlan GmbH
+  --
+  --     Pater-Delp-Str. -- 1
+  --     D-47877 -- Willich-Schiefbahn
+  --
+  --     http://www.bitplan.com
+  --
+  --
+-->
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Template for "Loc".
+=== see also ===
+see also
+* [[List of Locations]]
+* [[Help:Loc]]
+* [[Concept:Loc]]
+* [[:Category:Loc]]
+* [[:Template:Loc]]
+* [[:Form:Loc]]
+
+=== Usage ===
+<pre>{{Loc
+|id=
+|name=
+|wikidataId=
+|latlon=
+|type=
+|country=
+|url=
+|address=
+|notes=
+|storemode=property or subobject or none"
+}}
+</pre>
+[[Category:Template]]
+</noinclude><includeonly>{{#switch:{{{storemode|}}}
+|none=
+|subobject={{#subobject:{{{id|}}}
+|isA=Loc
+|Loc id={{{id|}}}
+|Loc name={{{name|}}}
+|Loc wikidataId={{{wikidataId|}}}
+|Loc latlon={{{latlon|}}}
+|Loc type={{{type|}}}
+|Loc country={{{country|}}}
+|Loc url={{{url|}}}
+|Loc address={{{address|}}}
+|Loc notes={{{notes|}}}
+}}
+|#default={{#set:
+|isA=Loc
+|Loc id={{{id|}}}
+|Loc name={{{name|}}}
+|Loc wikidataId={{{wikidataId|}}}
+|Loc latlon={{{latlon|}}}
+|Loc type={{{type|}}}
+|Loc country={{{country|}}}
+|Loc url={{{url|}}}
+|Loc address={{{address|}}}
+|Loc notes={{{notes|}}}
+}}
+}}
+{{#switch:{{{viewmode|}}}|hidden=|masterdetail=
+|#default={{{!}} class='wikitable'
+! colspan='2' {{!}}Loc
+{{!}}-
+{{#switch:{{{storemode|}}}|property=
+! colspan='2' style='text-align:left' {{!}} {{Icon|name=edit|size=24}}{{Link|target=Special:FormEdit/Loc/{{FULLPAGENAME}}|title=edit}}
+{{!}}-
+}}
+![[Property:Loc id|id]]
+{{!}}&nbsp;{{#if:{{{id|}}}|{{{id}}}|}}
+{{!}}-
+![[Property:Loc name|name]]
+{{!}}&nbsp;{{#if:{{{name|}}}|{{{name}}}|}}
+{{!}}-
+![[Property:Loc wikidataId|wikidataId]]
+{{!}}&nbsp;{{#if:{{{wikidataId|}}}|{{{wikidataId}}}|}}→{{#show: {{FULLPAGENAME}}|?Loc wikidataId}}
+{{!}}-
+![[Property:Loc latlon|latlon]]
+{{!}}&nbsp;{{#if:{{{latlon|}}}|{{{latlon}}}|}}
+{{!}}-
+![[Property:Loc type|type]]
+{{!}}&nbsp;{{#if:{{{type|}}}|{{{type}}}|}}
+{{!}}-
+![[Property:Loc country|country]]
+{{!}}&nbsp;{{#if:{{{country|}}}|{{{country}}}|}}
+{{!}}-
+![[Property:Loc url|url]]
+{{!}}&nbsp;{{#if:{{{url|}}}|{{{url}}}|}}
+{{!}}-
+![[Property:Loc address|address]]
+{{!}}&nbsp;{{#if:{{{address|}}}|{{{address}}}|}}
+{{!}}-
+![[Property:Loc notes|notes]]
+{{!}}&nbsp;{{#if:{{{notes|}}}|{{{notes}}}|}}
+{{!}}-
+{{!}}}
+}}
+</includeonly>

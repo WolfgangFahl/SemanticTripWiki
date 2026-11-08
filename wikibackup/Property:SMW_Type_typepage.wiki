@@ -1,0 +1,19 @@
+{{Property
+|name=typepage
+|label=typepage
+|documentation=The Semantic Media Wiki Special page for this specific type e.g. Special:Types/Text, Special:Types/Boolean, Special:Types/Date, Special:Types/Number, Special:Types/Page
+|type=Special:Types/Page
+|index=5
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=50
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:SMW_Type
+|storemode=prop
+}}
+* [[Has type::Page]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

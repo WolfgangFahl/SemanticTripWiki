@@ -1,0 +1,124 @@
+<noinclude><!--
+  --     Copyright (C) 2015-2026 BITPlan GmbH
+  --
+  --     Pater-Delp-Str. -- 1
+  --     D-47877 -- Willich-Schiefbahn
+  --
+  --     http://www.bitplan.com
+  --
+  --
+-->
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Template for "Action".
+=== see also ===
+see also
+* [[List of Actions]]
+* [[Help:Action]]
+* [[Concept:Action]]
+* [[:Category:Action]]
+* [[:Template:Action]]
+* [[:Form:Action]]
+
+=== Usage ===
+<pre>{{Action
+|name=
+|purpose=
+|servicetype=
+|service=
+|inputtype=
+|input=
+|actionpage=
+|output=
+|engine=
+|author=
+|since=
+|agent=
+|comment=
+|storemode=property or subobject or none"
+}}
+</pre>
+[[Category:Template]]
+</noinclude><includeonly>{{#switch:{{{storemode|}}}
+|none=
+|subobject={{#subobject:{{{name|}}}
+|isA=Action
+|Action name={{{name|}}}
+|Action purpose={{{purpose|}}}
+|Action servicetype={{{servicetype|}}}
+|Action service={{{service|}}}
+|Action inputtype={{{inputtype|}}}
+|Action input={{{input|}}}
+|Action actionpage={{{actionpage|}}}
+|Action output={{{output|}}}
+|Action engine={{{engine|}}}
+|Action author={{{author|}}}
+|Action since={{{since|}}}
+|Action agent={{{agent|}}}
+|Action comment={{{comment|}}}
+}}
+|#default={{#set:
+|isA=Action
+|Action name={{{name|}}}
+|Action purpose={{{purpose|}}}
+|Action servicetype={{{servicetype|}}}
+|Action service={{{service|}}}
+|Action inputtype={{{inputtype|}}}
+|Action input={{{input|}}}
+|Action actionpage={{{actionpage|}}}
+|Action output={{{output|}}}
+|Action engine={{{engine|}}}
+|Action author={{{author|}}}
+|Action since={{{since|}}}
+|Action agent={{{agent|}}}
+|Action comment={{{comment|}}}
+}}
+}}
+{{#switch:{{{viewmode|}}}|hidden=|masterdetail=
+|#default={{{!}} class='wikitable'
+! colspan='2' {{!}}Action
+{{!}}-
+{{#switch:{{{storemode|}}}|property=
+! colspan='2' style='text-align:left' {{!}} {{Icon|name=edit|size=24}}{{Link|target=Special:FormEdit/Action/{{FULLPAGENAME}}|title=edit}}
+{{!}}-
+}}
+![[Property:Action name|name]]
+{{!}}&nbsp;{{#if:{{{name|}}}|{{{name}}}|}}
+{{!}}-
+![[Property:Action purpose|purpose]]
+{{!}}&nbsp;{{#if:{{{purpose|}}}|{{{purpose}}}|}}
+{{!}}-
+![[Property:Action servicetype|servicetype]]
+{{!}}&nbsp;{{#if:{{{servicetype|}}}|{{{servicetype}}}|}}
+{{!}}-
+![[Property:Action service|service]]
+{{!}}&nbsp;{{#if:{{{service|}}}|{{{service}}}|}}
+{{!}}-
+![[Property:Action inputtype|inputtype]]
+{{!}}&nbsp;{{#if:{{{inputtype|}}}|{{{inputtype}}}|}}
+{{!}}-
+![[Property:Action input|input]]
+{{!}}&nbsp;{{#if:{{{input|}}}|{{{input}}}|}}
+{{!}}-
+![[Property:Action actionpage|actionpage]]
+{{!}}&nbsp;{{#if:{{{actionpage|}}}|{{{actionpage}}}|}}→[[{{{actionpage|}}}]]
+{{!}}-
+![[Property:Action output|output]]
+{{!}}&nbsp;{{#if:{{{output|}}}|{{{output}}}|}}
+{{!}}-
+![[Property:Action engine|engine]]
+{{!}}&nbsp;{{#if:{{{engine|}}}|{{{engine}}}|}}
+{{!}}-
+![[Property:Action author|author]]
+{{!}}&nbsp;{{#if:{{{author|}}}|{{{author}}}|}}→[[{{{author|}}}]]
+{{!}}-
+![[Property:Action since|since]]
+{{!}}&nbsp;{{#if:{{{since|}}}|{{{since}}}|}}
+{{!}}-
+![[Property:Action agent|agent]]
+{{!}}&nbsp;{{#if:{{{agent|}}}|{{{agent}}}|}}→[[{{{agent|}}}]]
+{{!}}-
+![[Property:Action comment|comment]]
+{{!}}&nbsp;{{#if:{{{comment|}}}|{{{comment}}}|}}
+{{!}}-
+{{!}}}
+}}
+</includeonly>

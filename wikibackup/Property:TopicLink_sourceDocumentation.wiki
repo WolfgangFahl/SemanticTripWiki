@@ -1,0 +1,20 @@
+{{Property
+|name=sourceDocumentation
+|label=source Doc
+|documentation=Documentation for the source Role
+|type=Special:Types/Text
+|index=5
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=300
+|uploadable=False
+|inputType=textarea
+|showInGrid=True
+|isLink=False
+|topic=Concept:TopicLink
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

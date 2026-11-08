@@ -1,0 +1,18 @@
+{{Property
+|name=id
+|label=id
+|documentation=SMW internal id of the type
+|type=Special:Types/Text
+|index=3
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:SMW_Type
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

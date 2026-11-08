@@ -1,0 +1,19 @@
+{{Property
+|name=date
+|label=date
+|documentation=day the leg is travelled
+|type=Special:Types/Date
+|index=2
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=datepicker
+|showInGrid=True
+|isLink=False
+|topic=Concept:Leg
+|storemode=prop
+}}
+* [[Has type::Date]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

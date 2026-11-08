@@ -1,0 +1,20 @@
+{{Property
+|name=showInGrid
+|label=showInGrid
+|documentation=I am true if this property is displayed in the default list of properties for my topic as 
+a column
+|type=Special:Types/Boolean
+|index=18
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|defaultValue=true
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Boolean]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

@@ -1,0 +1,19 @@
+{{Property
+|name=copyright
+|label=copyright
+|documentation=copyright of the context
+|type=Special:Types/Text
+|index=5
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=80
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Context
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

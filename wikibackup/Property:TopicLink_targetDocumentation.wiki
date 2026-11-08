@@ -1,0 +1,20 @@
+{{Property
+|name=targetDocumentation
+|label=target Doc
+|documentation=Documentation for the target Role
+|type=Special:Types/Text
+|index=9
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=300
+|uploadable=False
+|inputType=textarea
+|showInGrid=True
+|isLink=False
+|topic=Concept:TopicLink
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

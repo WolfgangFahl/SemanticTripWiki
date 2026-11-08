@@ -1,0 +1,20 @@
+{{Property
+|name=type
+|label=type
+|documentation=type of the location
+|type=Special:Types/Text
+|index=5
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=combobox
+|allowedValues=city,station,port,airport,bus stop,hotel,apartment,camping,restaurant,shop,POI
+|showInGrid=True
+|isLink=False
+|topic=Concept:Loc
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

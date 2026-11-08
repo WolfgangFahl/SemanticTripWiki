@@ -1,0 +1,18 @@
+{{Property
+|name=purpose
+|label=purpose
+|documentation=The purpose of the context
+|type=Special:Types/Text
+|index=2
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Context
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

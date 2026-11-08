@@ -1,0 +1,20 @@
+{{Property
+|name=transport
+|label=transport
+|documentation=mode of transport of the leg
+|type=Special:Types/Text
+|index=5
+|primaryKey=False
+|mandatory=True
+|namespace=Property
+|uploadable=False
+|inputType=radiobutton
+|allowedValues=bike,train,ferry,bus,car,plane,walk
+|showInGrid=True
+|isLink=False
+|topic=Concept:Leg
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

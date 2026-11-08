@@ -1,0 +1,18 @@
+{{Property
+|name=index
+|label=index
+|documentation=A positive number that specifies at which position of a Topic the given property should show. The first property to show has the index 1 each following property has an index that is +1 of the previous.
+|type=Special:Types/Number
+|index=5
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Number]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

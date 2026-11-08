@@ -1,0 +1,28 @@
+__NOCACHE__
+{{#ask: [[Topic name::Trip]]
+|mainlabel=-
+|?Topic icon = icon
+|? = Topic
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic documentation = documentation
+}}
+
+== Trips ==
+{{#ask: [[Concept:Trip]]|format=count}}
+{{#forminput:form=Trip|button text=add Trip}}
+{{#ask: [[Concept:Trip]]
+|mainlabel=Trip
+|?Trip name = name
+|?Trip title = title
+|?Trip from = from
+|?Trip to = to
+|?Trip start = start
+|?Trip end = end
+|?Trip participants = participants
+|?Trip status = status
+|limit=200
+|format=table
+}}
+[[:Category:Trip]]
+    

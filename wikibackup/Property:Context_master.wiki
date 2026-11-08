@@ -1,0 +1,18 @@
+{{Property
+|name=master
+|label=master
+|documentation=what is the original master source of this context
+|type=Special:Types/URL
+|index=7
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Context
+|storemode=prop
+}}
+* [[Has type::URL]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

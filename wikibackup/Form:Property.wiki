@@ -1,0 +1,138 @@
+<noinclude>
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Form for "Property".
+
+Create a new Property by entering a new pagetitle for a Property
+into the field below.
+
+If you enter an existing Property pagetitle - you will edit the Property
+with that pagetitle.
+{{#forminput:form=Property|values from concept=Property}}
+
+=== see also ===
+see also
+* [[List of Properties]]
+* [[Help:Property]]
+* [[Concept:Property]]
+* [[:Category:Property]]
+* [[:Template:Property]]
+* [[:Form:Property]]
+related topics:
+* [[Concept:SMW_Type]]
+
+</noinclude><includeonly><div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{section|Property|level=1|hidden}}}
+=Property=
+{{{for template|Property}}}
+{| class="wikitable"
+! colspan='2' | Property
+|-
+! name:
+<!-- Text name -->
+|{{{field|name|property=Property name|size=50|mandatory}}}
+|-
+! label:
+<!-- Text label -->
+|{{{field|label|property=Property label|size=50}}}
+|-
+! type:
+<!-- Page type -->
+|{{{field|type|property=Property type|input type=dropdown|values from=property=Property_type|default=Special:Types/Text}}}
+|-
+! scope:
+<!-- Text scope -->
+|{{{field|scope|property=Property scope|input type=dropdown|size=50|mandatory|values=Root,Override,Global}}}
+|-
+! index:
+<!-- Number index -->
+|{{{field|index|property=Property index}}}
+|-
+! sortPos:
+<!-- Number sortPos -->
+|{{{field|sortPos|property=Property sortPos|size=3}}}
+|-
+! primary key:
+<!-- Boolean primaryKey -->
+|{{{field|primaryKey|property=Property primaryKey|size=4}}}
+|-
+! mandatory:
+<!-- Boolean mandatory -->
+|{{{field|mandatory|property=Property mandatory|size=4}}}
+|-
+! namespace:
+<!-- Text namespace -->
+|{{{field|namespace|property=Property namespace|size=20}}}
+|-
+! size:
+<!-- Number size -->
+|{{{field|size|property=Property size|size=3}}}
+|-
+! uploadable:
+<!-- Boolean uploadable -->
+|{{{field|uploadable|property=Property uploadable|size=4}}}
+|-
+! default:
+<!-- Code defaultValue -->
+|{{{field|defaultValue|property=Property defaultValue|size=80}}}
+|-
+! inputType:
+<!-- Text inputType -->
+|{{{field|inputType|property=Property inputType|input type=dropdown|size=50|values=text, combobox, dropdown, textarea, tree, datetime, datepicker, timepicker, datetimepicker, menuselect,two listboxes, datecheck, regexp, radiobutton, googlemaps}}}
+|-
+! allowedValues:
+<!-- Text allowedValues -->
+|{{{field|allowedValues|property=Property allowedValues|size=50}}}
+|-
+! documentation:
+<!-- Text documentation -->
+|{{{field|documentation|property=Property documentation|input type=textarea|editor=wikieditor|size=500}}}
+|-
+! values from:
+<!-- Code values_from -->
+|{{{field|values_from|property=Property values_from|input type=textarea|editor=wikieditor|size=200}}}
+|-
+! external formatter URI:
+<!-- Text externalFormatterURI -->
+|{{{field|externalFormatterURI|property=Property externalFormatterURI|size=200}}}
+|-
+! showInGrid:
+<!-- Boolean showInGrid -->
+|{{{field|showInGrid|property=Property showInGrid|default=true}}}
+|-
+! isLink:
+<!-- Boolean isLink -->
+|{{{field|isLink|property=Property isLink}}}
+|-
+! allow nulls?:
+<!-- Boolean nullable -->
+|{{{field|nullable|property=Property nullable|default=false}}}
+|-
+! example:
+<!-- Text example -->
+|{{{field|example|property=Property example|default=false}}}
+|-
+! separator:
+<!-- Text separator -->
+|{{{field|separator|property=Property separator|size=5}}}
+|-
+! topic:
+<!-- Page topic -->
+|{{{field|topic|property=Property topic|input type=dropdown|values from concept=Topic}}}
+|-
+|-
+|}
+{{{field|storemode|default=property|hidden}}}
+{{{end template}}}
+<!-- Property -->
+        
+
+{{{section|Freitext|level=1|hidden}}}
+=Freitext=
+{{{standard input|free text|rows=10}}}
+
+{{{standard input|summary}}}
+{{{standard input|changes}}}
+
+{{{standard input|save}}}
+{{{standard input|cancel}}}
+</includeonly>
+        

@@ -1,0 +1,72 @@
+<noinclude>
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Form for "SMW_Type".
+
+Create a new SMW_Type by entering a new pagetitle for a SMW_Type
+into the field below.
+
+If you enter an existing SMW_Type pagetitle - you will edit the SMW_Type
+with that pagetitle.
+{{#forminput:form=SMW_Type|values from concept=SMW_Type}}
+
+=== see also ===
+see also
+* [[List of SMW_Types]]
+* [[Help:SMW_Type]]
+* [[Concept:SMW_Type]]
+* [[:Category:SMW_Type]]
+* [[:Template:SMW_Type]]
+* [[:Form:SMW_Type]]
+
+</noinclude><includeonly><div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{section|SMW_Type|level=1|hidden}}}
+=SMW_Type=
+{{{for template|SMW_Type|multiple}}}
+{| class="wikitable"
+! colspan='2' | SMW_Type
+|-
+! type:
+<!-- Text type -->
+|{{{field|type|property=SMW_Type type|size=50|mandatory}}}
+|-
+! documentation:
+<!-- Text documentation -->
+|{{{field|documentation|property=SMW_Type documentation|size=50}}}
+|-
+! id:
+<!-- Text id -->
+|{{{field|id|property=SMW_Type id}}}
+|-
+! helppage:
+<!-- URL helppage -->
+|{{{field|helppage|property=SMW_Type helppage|size=50}}}
+|-
+! typepage:
+<!-- Page typepage -->
+|{{{field|typepage|property=SMW_Type typepage|size=50}}}
+|-
+! java Type:
+<!-- Text javaType -->
+|{{{field|javaType|property=SMW_Type javaType|size=50}}}
+|-
+! usedByProperties:
+<!-- Page usedByProperties -->
+|{{{field|usedByProperties|property=SMW_Type usedByProperties|input type=dropdown|values from concept=Property}}}
+|-
+|-
+|}
+{{{field|storemode|default=subobject|hidden}}}
+{{{end template}}}
+<!-- SMW_Type -->
+        
+
+{{{section|Freitext|level=1|hidden}}}
+=Freitext=
+{{{standard input|free text|rows=10}}}
+
+{{{standard input|summary}}}
+{{{standard input|changes}}}
+
+{{{standard input|save}}}
+{{{standard input|cancel}}}
+</includeonly>
+        

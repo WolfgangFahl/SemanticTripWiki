@@ -1,0 +1,20 @@
+{{Property
+|name=documentation
+|label=documentation
+|documentation=The documentation for a property
+|type=Special:Types/Text
+|index=15
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=500
+|uploadable=False
+|inputType=textarea
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

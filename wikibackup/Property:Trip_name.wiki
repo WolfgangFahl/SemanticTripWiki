@@ -1,0 +1,18 @@
+{{Property
+|name=name
+|label=name
+|documentation=short name of the trip used as page name e.g. BariLjubljana2026
+|type=Special:Types/Text
+|index=1
+|primaryKey=True
+|mandatory=True
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Trip
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

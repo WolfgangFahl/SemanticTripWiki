@@ -1,0 +1,65 @@
+from dataclasses import dataclass
+from typing import Optional
+import dacite
+@dataclass
+class Action:
+    """
+    An action/function/operation to be performed
+    """
+    pageTitle:str
+    purpose:Optional[str] # The purpose of the action
+    servicetype:Optional[str] # The type of the service
+    service:Optional[str] # The service to be used
+    inputtype:Optional[str] # What is the type of the input?
+    input:Optional[str] # the description of the input e.g. a page name, url or SMW ask query
+    actionpage:Optional[str] # What page will 'steer' this action?
+    output:Optional[str] # the typed description of the output - parameter names and types like the input; prose belongs into the comment field
+    engine:Optional[str] # the processing engine to be used either [[Rythm]] or [[Freemarker]]
+    author:Optional[str] # the author of this action
+    since:Optional[str] # since when is this action available?
+    comment:Optional[str] # a comment for the action
+    agent:Optional[str] # the agent performing this action
+    name:Optional[str] # The name of the Action
+
+    @classmethod
+    def askQuery(cls):
+        """
+        get the ask Query for Action
+
+        Returns:
+            str: the mediawiki markup for the ask query
+        """
+        ask="""{{#ask: [[Concept:Action]]
+|mainlabel=pageTitle
+|?Action purpose = purpose
+|?Action servicetype = servicetype
+|?Action service = service
+|?Action inputtype = inputtype
+|?Action input = input
+|?Action actionpage = actionpage
+|?Action output = output
+|?Action engine = engine
+|?Action author = author
+|?Action since = since
+|?Action comment = comment
+|?Action agent = agent
+|?Action name = name
+|limit=10000
+|format=table
+}}"""
+        return ask
+
+    @classmethod
+    def fromDict(cls,data:dict):
+        """
+        create a Action from the given dict
+
+        Args:
+            data(dict): the dict to create the Action from
+
+        Returns:
+            Action: the freshly created Action
+        """
+        action=dacite.from_dict(data_class=cls,data=data)
+        return action
+        

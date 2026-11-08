@@ -1,0 +1,20 @@
+{{Property
+|name=input
+|label=input
+|documentation=the description of the input e.g. a page name, url or SMW ask query
+|type=Special:Types/Code
+|index=5
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=300
+|uploadable=False
+|inputType=textarea
+|showInGrid=True
+|isLink=False
+|topic=Concept:Action
+|storemode=prop
+}}
+* [[Has type::Code]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

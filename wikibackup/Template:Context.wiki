@@ -1,0 +1,106 @@
+<noinclude><!--
+  --     Copyright (C) 2015-2026 BITPlan GmbH
+  --
+  --     Pater-Delp-Str. -- 1
+  --     D-47877 -- Willich-Schiefbahn
+  --
+  --     http://www.bitplan.com
+  --
+  --
+-->
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Template for "Context".
+=== see also ===
+see also
+* [[List of Contexts]]
+* [[Help:Context]]
+* [[Concept:Context]]
+* [[:Category:Context]]
+* [[:Template:Context]]
+* [[:Form:Context]]
+related topics:
+* [[Concept:Topic]]
+
+=== Usage ===
+<pre>{{Context
+|name=
+|purpose=
+|since=
+|updated=
+|copyright=
+|demo=
+|master=
+|storemode=property or subobject or none"
+}}
+</pre>
+[[Category:Template]]
+</noinclude><includeonly>{{#switch:{{{storemode|}}}
+|none=
+|subobject={{#subobject:{{{name|}}}
+|isA=Context
+|Context name={{{name|}}}
+|Context purpose={{{purpose|}}}
+|Context since={{{since|}}}
+|Context updated={{{updated|}}}
+|Context copyright={{{copyright|}}}
+|Context demo={{{demo|}}}
+|Context master={{{master|}}}
+}}
+|#default={{#set:
+|isA=Context
+|Context name={{{name|}}}
+|Context purpose={{{purpose|}}}
+|Context since={{{since|}}}
+|Context updated={{{updated|}}}
+|Context copyright={{{copyright|}}}
+|Context demo={{{demo|}}}
+|Context master={{{master|}}}
+}}
+}}
+{{#switch:{{{viewmode|}}}|hidden=|masterdetail=
+= topics =
+{{#ask:[[Concept:Topic]][[Topic context::{{FULLPAGENAME}}]]
+| ?Topic name = name
+| ?Topic pluralName = pluralName
+| ?Topic isA = isA
+| ?Topic extends = extends
+| ?Topic icon = icon
+| ?Topic iconUrl = iconUrl
+| ?Topic documentation = documentation
+| ?Topic wikiDocumentation = wikiDocumentation
+| ?Topic defaultstoremode = defaultstoremode
+| ?Topic listLimit = listLimit
+| ?Topic cargo = cargo
+| ?Topic headerTabs = headerTabs
+| ?Topic context = context
+}}|#default={{{!}} class='wikitable'
+! colspan='2' {{!}}Context
+{{!}}-
+{{#switch:{{{storemode|}}}|property=
+! colspan='2' style='text-align:left' {{!}} {{Icon|name=edit|size=24}}{{Link|target=Special:FormEdit/Context/{{FULLPAGENAME}}|title=edit}}
+{{!}}-
+}}
+![[Property:Context name|name]]
+{{!}}&nbsp;{{#if:{{{name|}}}|{{{name}}}|}}
+{{!}}-
+![[Property:Context purpose|purpose]]
+{{!}}&nbsp;{{#if:{{{purpose|}}}|{{{purpose}}}|}}
+{{!}}-
+![[Property:Context since|since]]
+{{!}}&nbsp;{{#if:{{{since|}}}|{{{since}}}|}}
+{{!}}-
+![[Property:Context updated|updated]]
+{{!}}&nbsp;{{#if:{{{updated|}}}|{{{updated}}}|}}
+{{!}}-
+![[Property:Context copyright|copyright]]
+{{!}}&nbsp;{{#if:{{{copyright|}}}|{{{copyright}}}|}}
+{{!}}-
+![[Property:Context demo|demo]]
+{{!}}&nbsp;{{#if:{{{demo|}}}|{{{demo}}}|}}
+{{!}}-
+![[Property:Context master|master]]
+{{!}}&nbsp;{{#if:{{{master|}}}|{{{master}}}|}}
+{{!}}-
+{{!}}}
+}}
+[[Category:Context]]{{#default_form:Context}}
+</includeonly>

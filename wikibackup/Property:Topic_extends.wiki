@@ -1,0 +1,19 @@
+{{Property
+|name=extends
+|label=extends
+|documentation=this topic specializes the topic it extends (if any)
+|type=Special:Types/Text
+|index=4
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|values_from=concept=Topic
+|showInGrid=True
+|isLink=False
+|topic=Concept:Topic
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

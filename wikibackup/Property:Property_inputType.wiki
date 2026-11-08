@@ -1,0 +1,24 @@
+{{Property
+|name=inputType
+|label=inputType
+|documentation=see
+* http://www.mediawiki.org/wiki/Extension:Semantic_Forms/Defining_forms#.27field.27_tag<br>input type - Specifies the type of input this field will have in the form. If a field corresponds to an SMW property or Cargo field, the form will usually have the correct input type by default; otherwise the default is text. If the corresponding SMW property, or Cargo field, cannot be automatically determined, you can use the parameter 'property', or the parameters 'cargo table' and 'cargo field', to manually specify it (see below). The allowed set of input types is different for every semantic property type; see below for the full list of options.
+* http://www.mediawiki.org/wiki/Extension:Semantic_Forms/Defining_forms#Allowed_input_types_for_data_types
+* http://www.mediawiki.org/wiki/Extension:Semantic_Forms_Inputs
+|type=Special:Types/Text
+|index=13
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=50
+|uploadable=False
+|inputType=dropdown
+|allowedValues=text, combobox, dropdown, textarea, tree, datetime, datepicker, timepicker, datetimepicker, menuselect,two listboxes, datecheck, regexp, radiobutton, googlemaps
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

@@ -1,0 +1,31 @@
+__NOCACHE__
+{{#ask: [[Topic name::TopicLink]]
+|mainlabel=-
+|?Topic icon = icon
+|? = Topic
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic documentation = documentation
+}}
+
+== TopicLinks ==
+{{#ask: [[Concept:TopicLink]]|format=count}}
+{{#forminput:form=TopicLink|button text=add TopicLink}}
+{{#ask: [[Concept:TopicLink]]
+|mainlabel=TopicLink
+|?TopicLink name = name
+|?TopicLink source = source
+|?TopicLink sourceRole = sourceRole
+|?TopicLink sourceMultiple = sourceMultiple
+|?TopicLink sourceDocumentation = sourceDocumentation
+|?TopicLink target = target
+|?TopicLink targetRole = targetRole
+|?TopicLink targetMultiple = targetMultiple
+|?TopicLink targetDocumentation = targetDocumentation
+|?TopicLink separator = separator
+|?TopicLink masterDetail = masterDetail
+|limit=200
+|format=table
+}}
+[[:Category:TopicLink]]
+    

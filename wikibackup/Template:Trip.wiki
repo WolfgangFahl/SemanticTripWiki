@@ -1,0 +1,107 @@
+<noinclude><!--
+  --     Copyright (C) 2015-2026 BITPlan GmbH
+  --
+  --     Pater-Delp-Str. -- 1
+  --     D-47877 -- Willich-Schiefbahn
+  --
+  --     http://www.bitplan.com
+  --
+  --
+-->
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Template for "Trip".
+=== see also ===
+see also
+* [[List of Trips]]
+* [[Help:Trip]]
+* [[Concept:Trip]]
+* [[:Category:Trip]]
+* [[:Template:Trip]]
+* [[:Form:Trip]]
+
+=== Usage ===
+<pre>{{Trip
+|name=
+|title=
+|from=
+|to=
+|start=
+|end=
+|participants=
+|status=
+|source=
+|description=
+|storemode=property or subobject or none"
+}}
+</pre>
+[[Category:Template]]
+</noinclude><includeonly>{{#switch:{{{storemode|}}}
+|none=
+|subobject={{#subobject:{{{name|}}}
+|isA=Trip
+|Trip name={{{name|}}}
+|Trip title={{{title|}}}
+|Trip from={{{from|}}}
+|Trip to={{{to|}}}
+|Trip start={{{start|}}}
+|Trip end={{{end|}}}
+|Trip participants={{{participants|}}}
+|Trip status={{{status|}}}
+|Trip source={{{source|}}}
+|Trip description={{{description|}}}
+}}
+|#default={{#set:
+|isA=Trip
+|Trip name={{{name|}}}
+|Trip title={{{title|}}}
+|Trip from={{{from|}}}
+|Trip to={{{to|}}}
+|Trip start={{{start|}}}
+|Trip end={{{end|}}}
+|Trip participants={{{participants|}}}
+|Trip status={{{status|}}}
+|Trip source={{{source|}}}
+|Trip description={{{description|}}}
+}}
+}}
+{{#switch:{{{viewmode|}}}|hidden=|masterdetail=
+|#default={{{!}} class='wikitable'
+! colspan='2' {{!}}Trip
+{{!}}-
+{{#switch:{{{storemode|}}}|property=
+! colspan='2' style='text-align:left' {{!}} {{Icon|name=edit|size=24}}{{Link|target=Special:FormEdit/Trip/{{FULLPAGENAME}}|title=edit}}
+{{!}}-
+}}
+![[Property:Trip name|name]]
+{{!}}&nbsp;{{#if:{{{name|}}}|{{{name}}}|}}
+{{!}}-
+![[Property:Trip title|title]]
+{{!}}&nbsp;{{#if:{{{title|}}}|{{{title}}}|}}
+{{!}}-
+![[Property:Trip from|from]]
+{{!}}&nbsp;{{#if:{{{from|}}}|{{{from}}}|}}
+{{!}}-
+![[Property:Trip to|to]]
+{{!}}&nbsp;{{#if:{{{to|}}}|{{{to}}}|}}
+{{!}}-
+![[Property:Trip start|start]]
+{{!}}&nbsp;{{#if:{{{start|}}}|{{{start}}}|}}
+{{!}}-
+![[Property:Trip end|end]]
+{{!}}&nbsp;{{#if:{{{end|}}}|{{{end}}}|}}
+{{!}}-
+![[Property:Trip participants|participants]]
+{{!}}&nbsp;{{#if:{{{participants|}}}|{{{participants}}}|}}
+{{!}}-
+![[Property:Trip status|status]]
+{{!}}&nbsp;{{#if:{{{status|}}}|{{{status}}}|}}
+{{!}}-
+![[Property:Trip source|source]]
+{{!}}&nbsp;{{#if:{{{source|}}}|{{{source}}}|}}
+{{!}}-
+![[Property:Trip description|description]]
+{{!}}&nbsp;{{#if:{{{description|}}}|{{{description}}}|}}
+{{!}}-
+{{!}}}
+}}
+[[Category:Trip]]{{#default_form:Trip}}
+</includeonly>

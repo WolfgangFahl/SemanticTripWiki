@@ -1,0 +1,23 @@
+{{Property
+|name=uploadable
+|label=uploadable
+|documentation=Specifies that a link should be placed next to this field, that opens a popup window to let the user upload a file; see 'Uploading files', below. See
+* https://www.mediawiki.org/wiki/Extension:Semantic_Forms/Defining_forms#.27field.27_tag
+* https://www.mediawiki.org/wiki/Extension:Semantic_Forms/Defining_forms#Uploading_files
+
+The type of the target property needs to be Page for this to work
+|type=Special:Types/Boolean
+|index=11
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=4
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Boolean]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

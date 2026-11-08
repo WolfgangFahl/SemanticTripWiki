@@ -1,0 +1,24 @@
+{{Property
+|name=masterDetail
+|label=masterDetail
+|documentation=should the details be displayed in the same form and template?
+If no 
+* for a 1:1 link there will be a linking attribute used and that can be selected. 
+* for a 1:n link a link to the list of neighbours will be displayed
+if yes
+* for a 1:1 link the details
+* for a 1:n link
+|type=Special:Types/Boolean
+|index=11
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:TopicLink
+|storemode=prop
+}}
+* [[Has type::Boolean]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

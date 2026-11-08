@@ -1,0 +1,18 @@
+{{Property
+|name=country
+|label=country
+|documentation=country of the location as ISO 3166-1 alpha-2 code e.g. IT
+|type=Special:Types/Text
+|index=6
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Loc
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

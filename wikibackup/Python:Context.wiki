@@ -1,0 +1,55 @@
+from dataclasses import dataclass
+from typing import Optional
+import dacite
+@dataclass
+class Context:
+    """
+    A Context groups some topics like a Namespace/Package
+    """
+    pageTitle:str
+    name:Optional[str] # Name of the context
+    purpose:Optional[str] # The purpose of the context
+    since:Optional[str] # since when is this context available?
+    updated:Optional[str] # most recent update of the context
+    copyright:Optional[str] # copyright of the context
+    demo:Optional[str] # demonstration ProfiWiki
+    master:Optional[str] # what is the original master source of this context
+
+    @classmethod
+    def askQuery(cls):
+        """
+        get the ask Query for Context
+
+        Returns:
+            str: the mediawiki markup for the ask query
+        """
+        ask="""{{#ask: [[Concept:Context]]
+|mainlabel=pageTitle
+|?Context name = name
+|?Context purpose = purpose
+|?Context since = since
+|?Context updated = updated
+|?Context copyright = copyright
+|?Context demo = demo
+|?Context master = master
+|limit=10000
+|format=table
+|sort=Context name
+|order=ascending
+}}"""
+        return ask
+
+    @classmethod
+    def fromDict(cls,data:dict):
+        """
+        create a Context from the given dict
+
+        Args:
+            data(dict): the dict to create the Context from
+
+        Returns:
+            Context: the freshly created Context
+        """
+        context=dacite.from_dict(data_class=cls,data=data)
+        return context
+        

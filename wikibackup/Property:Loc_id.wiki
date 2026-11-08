@@ -1,0 +1,18 @@
+{{Property
+|name=id
+|label=id
+|documentation=id of the location referenced by legs e.g. Bari
+|type=Special:Types/Text
+|index=1
+|primaryKey=True
+|mandatory=True
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Loc
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

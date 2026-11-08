@@ -1,0 +1,24 @@
+{{Property
+|name=sortPos
+|label=sortPos
+|documentation=If none empty >0 this is the position in the sort clause of this 
+property. This is used when displaying list of the topic as the default sort order
+and it is used for selecting topics .
+
+E.g.
+Sortpos 1 for attribute lastname and sortpos 2 for attribute firstname leads to  sort by lastname,firstname
+|type=Special:Types/Number
+|index=6
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=3
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Number]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

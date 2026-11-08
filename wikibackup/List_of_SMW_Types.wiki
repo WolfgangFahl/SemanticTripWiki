@@ -1,0 +1,26 @@
+__NOCACHE__
+{{#ask: [[Topic name::SMW_Type]]
+|mainlabel=-
+|?Topic icon = icon
+|? = Topic
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic documentation = documentation
+}}
+
+== SMW_Types ==
+{{#ask: [[Concept:SMW_Type]]|format=count}}
+{{#forminput:form=SMW_Type|button text=add SMW_Type}}
+{{#ask: [[Concept:SMW_Type]]
+|mainlabel=SMW_Type
+|?SMW_Type type = type
+|?SMW_Type documentation = documentation
+|?SMW_Type id = id
+|?SMW_Type helppage = helppage
+|?SMW_Type typepage = typepage
+|?SMW_Type javaType = javaType
+|limit=200
+|format=table
+}}
+[[:Category:SMW_Type]]
+    

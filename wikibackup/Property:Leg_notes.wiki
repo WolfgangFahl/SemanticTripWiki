@@ -1,0 +1,19 @@
+{{Property
+|name=notes
+|label=notes
+|documentation=notes on the leg
+|type=Special:Types/Text
+|index=12
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=textarea
+|showInGrid=False
+|isLink=False
+|topic=Concept:Leg
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

@@ -1,0 +1,18 @@
+{{Property
+|name=demo
+|label=demo
+|documentation=demonstration ProfiWiki
+|type=Special:Types/URL
+|index=6
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Context
+|storemode=prop
+}}
+* [[Has type::URL]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

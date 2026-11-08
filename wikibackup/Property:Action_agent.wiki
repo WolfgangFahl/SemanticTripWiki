@@ -1,0 +1,20 @@
+{{Property
+|name=agent
+|label=agent
+|documentation=the agent performing this action
+|type=Special:Types/Page
+|index=12
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=combobox
+|values_from=concept=Agent
+|showInGrid=True
+|isLink=False
+|topic=Concept:Action
+|storemode=prop
+}}
+* [[Has type::Page]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

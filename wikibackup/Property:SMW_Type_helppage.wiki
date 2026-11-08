@@ -1,0 +1,19 @@
+{{Property
+|name=helppage
+|label=helppage
+|documentation=The url of the 'official' documentation page of this type
+|type=Special:Types/URL
+|index=4
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=50
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:SMW_Type
+|storemode=prop
+}}
+* [[Has type::URL]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

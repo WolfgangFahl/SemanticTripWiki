@@ -1,0 +1,33 @@
+__NOCACHE__
+{{#ask: [[Topic name::Action]]
+|mainlabel=-
+|?Topic icon = icon
+|? = Topic
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic documentation = documentation
+}}
+
+== Actions ==
+{{#ask: [[Concept:Action]]|format=count}}
+{{#forminput:form=Action|button text=add Action}}
+{{#ask: [[Concept:Action]]
+|mainlabel=Action
+|?Action purpose = purpose
+|?Action servicetype = servicetype
+|?Action service = service
+|?Action inputtype = inputtype
+|?Action input = input
+|?Action actionpage = actionpage
+|?Action output = output
+|?Action engine = engine
+|?Action author = author
+|?Action since = since
+|?Action comment = comment
+|?Action agent = agent
+|?Action name = name
+|limit=200
+|format=table
+}}
+[[:Category:Action]]
+    

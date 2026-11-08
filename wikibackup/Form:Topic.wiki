@@ -1,0 +1,98 @@
+<noinclude>
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Form for "Topic".
+
+Create a new Topic by entering a new pagetitle for a Topic
+into the field below.
+
+If you enter an existing Topic pagetitle - you will edit the Topic
+with that pagetitle.
+{{#forminput:form=Topic|values from concept=Topic}}
+
+=== see also ===
+see also
+* [[List of Topics]]
+* [[Help:Topic]]
+* [[Concept:Topic]]
+* [[:Category:Topic]]
+* [[:Template:Topic]]
+* [[:Form:Topic]]
+related topics:
+* [[Concept:Property]]
+
+</noinclude><includeonly><div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{section|Topic|level=1|hidden}}}
+=Topic=
+{{{for template|Topic}}}
+{| class="wikitable"
+! colspan='2' | Topic
+|-
+! name:
+<!-- Text name -->
+|{{{field|name|property=Topic name|size=80|mandatory}}}
+|-
+! pluralName:
+<!-- Text pluralName -->
+|{{{field|pluralName|property=Topic pluralName|size=50}}}
+|-
+! isA:
+<!-- Text isA -->
+|{{{field|isA|property=Topic isA}}}
+|-
+! extends:
+<!-- Text extends -->
+|{{{field|extends|property=Topic extends|values from=concept=Topic}}}
+|-
+! icon:
+<!-- Page icon -->
+|{{{field|icon|property=Topic icon|size=55|uploadable}}}
+|-
+! icon Url:
+<!-- Code iconUrl -->
+|{{{field|iconUrl|property=Topic iconUrl|input type=text|size=80}}}
+|-
+! documentation:
+<!-- Text documentation -->
+|{{{field|documentation|property=Topic documentation|size=50}}}
+|-
+! wikiDocumentation:
+<!-- Text wikiDocumentation -->
+|{{{field|wikiDocumentation|property=Topic wikiDocumentation|size=50}}}
+|-
+! default storemode:
+<!-- Text defaultstoremode -->
+|{{{field|defaultstoremode|property=Topic defaultstoremode|input type=radiobutton|size=50|values=none,property,subobject}}}
+|-
+! list Limit:
+<!-- Number listLimit -->
+|{{{field|listLimit|property=Topic listLimit|size=4|default=200}}}
+|-
+! use cargo:
+<!-- Boolean cargo -->
+|{{{field|cargo|property=Topic cargo}}}
+|-
+! headerTabs:
+<!-- Boolean headerTabs -->
+|{{{field|headerTabs|property=Topic headerTabs}}}
+|-
+! context:
+<!-- Page context -->
+|{{{field|context|property=Topic context|input type=dropdown|values from concept=Context}}}
+|-
+|-
+|}
+{{{field|storemode|default=property|hidden}}}
+{{{end template}}}
+<!-- Topic -->
+        
+
+{{{section|Freitext|level=1|hidden}}}
+=Freitext=
+{{{standard input|free text|rows=10}}}
+
+{{{standard input|summary}}}
+{{{standard input|changes}}}
+
+{{{standard input|save}}}
+{{{standard input|cancel}}}
+</includeonly>
+        

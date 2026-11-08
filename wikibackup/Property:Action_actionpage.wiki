@@ -1,0 +1,19 @@
+{{Property
+|name=actionpage
+|label=actionpage
+|documentation=What page will 'steer' this action?
+|type=Special:Types/Page
+|index=6
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|defaultValue=Property:Action actionpage
+|showInGrid=True
+|isLink=False
+|topic=Concept:Action
+|storemode=prop
+}}
+* [[Has type::Page]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

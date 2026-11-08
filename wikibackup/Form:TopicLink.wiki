@@ -1,0 +1,88 @@
+<noinclude>
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Form for "TopicLink".
+
+Create a new TopicLink by entering a new pagetitle for a TopicLink
+into the field below.
+
+If you enter an existing TopicLink pagetitle - you will edit the TopicLink
+with that pagetitle.
+{{#forminput:form=TopicLink|values from concept=TopicLink}}
+
+=== see also ===
+see also
+* [[List of TopicLinks]]
+* [[Help:TopicLink]]
+* [[Concept:TopicLink]]
+* [[:Category:TopicLink]]
+* [[:Template:TopicLink]]
+* [[:Form:TopicLink]]
+
+</noinclude><includeonly><div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{section|TopicLink|level=1|hidden}}}
+=TopicLink=
+{{{for template|TopicLink|multiple}}}
+{| class="wikitable"
+! colspan='2' | TopicLink
+|-
+! name:
+<!-- Text name -->
+|{{{field|name|property=TopicLink name|size=50}}}
+|-
+! source:
+<!-- Page source -->
+|{{{field|source|property=TopicLink source|input type=dropdown|size=50|mandatory|values from=concept=Topic}}}
+|-
+! sourceRole:
+<!-- Text sourceRole -->
+|{{{field|sourceRole|property=TopicLink sourceRole|size=50}}}
+|-
+! sourceMultiple:
+<!-- Boolean sourceMultiple -->
+|{{{field|sourceMultiple|property=TopicLink sourceMultiple|size=50}}}
+|-
+! source Doc:
+<!-- Text sourceDocumentation -->
+|{{{field|sourceDocumentation|property=TopicLink sourceDocumentation|input type=textarea|editor=wikieditor|size=300}}}
+|-
+! target:
+<!-- Page target -->
+|{{{field|target|property=TopicLink target|size=50}}}
+|-
+! targetRole:
+<!-- Text targetRole -->
+|{{{field|targetRole|property=TopicLink targetRole|size=50}}}
+|-
+! sourceMultiple:
+<!-- Boolean targetMultiple -->
+|{{{field|targetMultiple|property=TopicLink targetMultiple|size=50}}}
+|-
+! target Doc:
+<!-- Text targetDocumentation -->
+|{{{field|targetDocumentation|property=TopicLink targetDocumentation|input type=textarea|editor=wikieditor|size=300}}}
+|-
+! separator:
+<!-- Text separator -->
+|{{{field|separator|property=TopicLink separator}}}
+|-
+! masterDetail:
+<!-- Boolean masterDetail -->
+|{{{field|masterDetail|property=TopicLink masterDetail}}}
+|-
+|-
+|}
+{{{field|storemode|default=subobject|hidden}}}
+{{{end template}}}
+<!-- TopicLink -->
+        
+
+{{{section|Freitext|level=1|hidden}}}
+=Freitext=
+{{{standard input|free text|rows=10}}}
+
+{{{standard input|summary}}}
+{{{standard input|changes}}}
+
+{{{standard input|save}}}
+{{{standard input|cancel}}}
+</includeonly>
+        

@@ -1,0 +1,18 @@
+{{Property
+|name=latlon
+|label=latlon
+|documentation=latitude and longitude of the location
+|type=Special:Types/Geographic coordinates
+|index=4
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Loc
+|storemode=prop
+}}
+* [[Has type::Geographic coordinates]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

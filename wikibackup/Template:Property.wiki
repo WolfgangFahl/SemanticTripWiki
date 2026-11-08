@@ -1,0 +1,196 @@
+<noinclude><!--
+  --     Copyright (C) 2015-2026 BITPlan GmbH
+  --
+  --     Pater-Delp-Str. -- 1
+  --     D-47877 -- Willich-Schiefbahn
+  --
+  --     http://www.bitplan.com
+  --
+  --
+-->
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Template for "Property".
+=== see also ===
+see also
+* [[List of Properties]]
+* [[Help:Property]]
+* [[Concept:Property]]
+* [[:Category:Property]]
+* [[:Template:Property]]
+* [[:Form:Property]]
+related topics:
+* [[Concept:SMW_Type]]
+
+=== Usage ===
+<pre>{{Property
+|name=
+|label=
+|type=
+|scope=
+|index=
+|sortPos=
+|primaryKey=
+|mandatory=
+|namespace=
+|size=
+|uploadable=
+|defaultValue=
+|inputType=
+|allowedValues=
+|documentation=
+|values_from=
+|externalFormatterURI=
+|showInGrid=
+|isLink=
+|nullable=
+|example=
+|separator=
+|topic=
+|storemode=property or subobject or none"
+}}
+</pre>
+[[Category:Template]]
+</noinclude><includeonly>{{#switch:{{{storemode|}}}
+|none=
+|subobject={{#subobject:{{{name|}}}
+|isA=Property
+|Property name={{{name|}}}
+|Property label={{{label|}}}
+|Property type={{{type|}}}
+|Property scope={{{scope|}}}
+|Property index={{{index|}}}
+|Property sortPos={{{sortPos|}}}
+|Property primaryKey={{{primaryKey|}}}
+|Property mandatory={{{mandatory|}}}
+|Property namespace={{{namespace|}}}
+|Property size={{{size|}}}
+|Property uploadable={{{uploadable|}}}
+|Property defaultValue={{{defaultValue|}}}
+|Property inputType={{{inputType|}}}
+|Property allowedValues={{{allowedValues|}}}
+|Property documentation={{{documentation|}}}
+|Property values_from={{{values_from|}}}
+|Property externalFormatterURI={{{externalFormatterURI|}}}
+|Property showInGrid={{{showInGrid|}}}
+|Property isLink={{{isLink|}}}
+|Property nullable={{{nullable|}}}
+|Property example={{{example|}}}
+|Property separator={{{separator|}}}
+|Property topic={{{topic|}}}
+}}
+|#default={{#set:
+|isA=Property
+|Property name={{{name|}}}
+|Property label={{{label|}}}
+|Property type={{{type|}}}
+|Property scope={{{scope|}}}
+|Property index={{{index|}}}
+|Property sortPos={{{sortPos|}}}
+|Property primaryKey={{{primaryKey|}}}
+|Property mandatory={{{mandatory|}}}
+|Property namespace={{{namespace|}}}
+|Property size={{{size|}}}
+|Property uploadable={{{uploadable|}}}
+|Property defaultValue={{{defaultValue|}}}
+|Property inputType={{{inputType|}}}
+|Property allowedValues={{{allowedValues|}}}
+|Property documentation={{{documentation|}}}
+|Property values_from={{{values_from|}}}
+|Property externalFormatterURI={{{externalFormatterURI|}}}
+|Property showInGrid={{{showInGrid|}}}
+|Property isLink={{{isLink|}}}
+|Property nullable={{{nullable|}}}
+|Property example={{{example|}}}
+|Property separator={{{separator|}}}
+|Property topic={{{topic|}}}
+}}
+}}
+{{#switch:{{{viewmode|}}}|hidden=|masterdetail=
+= smw_type =
+{{#ask:[[Concept:SMW_Type]][[SMW_Type usedByProperties::{{FULLPAGENAME}}]]
+| ?SMW_Type type = type
+| ?SMW_Type documentation = documentation
+| ?SMW_Type id = id
+| ?SMW_Type helppage = helppage
+| ?SMW_Type typepage = typepage
+| ?SMW_Type javaType = javaType
+| ?SMW_Type usedByProperties = usedByProperties
+}}|#default={{{!}} class='wikitable'
+! colspan='2' {{!}}Property
+{{!}}-
+{{#switch:{{{storemode|}}}|property=
+! colspan='2' style='text-align:left' {{!}} {{Icon|name=edit|size=24}}{{Link|target=Special:FormEdit/Property/{{FULLPAGENAME}}|title=edit}}
+{{!}}-
+}}
+![[Property:Property name|name]]
+{{!}}&nbsp;{{#if:{{{name|}}}|{{{name}}}|}}
+{{!}}-
+![[Property:Property label|label]]
+{{!}}&nbsp;{{#if:{{{label|}}}|{{{label}}}|}}
+{{!}}-
+![[Property:Property type|type]]
+{{!}}&nbsp;{{#if:{{{type|}}}|{{{type}}}|}}→[[{{{type|}}}]]
+{{!}}-
+![[Property:Property scope|scope]]
+{{!}}&nbsp;{{#if:{{{scope|}}}|{{{scope}}}|}}
+{{!}}-
+![[Property:Property index|index]]
+{{!}}&nbsp;{{#if:{{{index|}}}|{{{index}}}|}}
+{{!}}-
+![[Property:Property sortPos|sortPos]]
+{{!}}&nbsp;{{#if:{{{sortPos|}}}|{{{sortPos}}}|}}
+{{!}}-
+![[Property:Property primaryKey|primaryKey]]
+{{!}}&nbsp;{{#if:{{{primaryKey|}}}|{{{primaryKey}}}|}}
+{{!}}-
+![[Property:Property mandatory|mandatory]]
+{{!}}&nbsp;{{#if:{{{mandatory|}}}|{{{mandatory}}}|}}
+{{!}}-
+![[Property:Property namespace|namespace]]
+{{!}}&nbsp;{{#if:{{{namespace|}}}|{{{namespace}}}|}}
+{{!}}-
+![[Property:Property size|size]]
+{{!}}&nbsp;{{#if:{{{size|}}}|{{{size}}}|}}
+{{!}}-
+![[Property:Property uploadable|uploadable]]
+{{!}}&nbsp;{{#if:{{{uploadable|}}}|{{{uploadable}}}|}}
+{{!}}-
+![[Property:Property defaultValue|defaultValue]]
+{{!}}&nbsp;{{#if:{{{defaultValue|}}}|{{{defaultValue}}}|}}
+{{!}}-
+![[Property:Property inputType|inputType]]
+{{!}}&nbsp;{{#if:{{{inputType|}}}|{{{inputType}}}|}}
+{{!}}-
+![[Property:Property allowedValues|allowedValues]]
+{{!}}&nbsp;{{#if:{{{allowedValues|}}}|{{{allowedValues}}}|}}
+{{!}}-
+![[Property:Property documentation|documentation]]
+{{!}}&nbsp;{{#if:{{{documentation|}}}|{{{documentation}}}|}}
+{{!}}-
+![[Property:Property values_from|values_from]]
+{{!}}&nbsp;{{#if:{{{values_from|}}}|{{{values_from}}}|}}
+{{!}}-
+![[Property:Property externalFormatterURI|externalFormatterURI]]
+{{!}}&nbsp;{{#if:{{{externalFormatterURI|}}}|{{{externalFormatterURI}}}|}}
+{{!}}-
+![[Property:Property showInGrid|showInGrid]]
+{{!}}&nbsp;{{#if:{{{showInGrid|}}}|{{{showInGrid}}}|}}
+{{!}}-
+![[Property:Property isLink|isLink]]
+{{!}}&nbsp;{{#if:{{{isLink|}}}|{{{isLink}}}|}}
+{{!}}-
+![[Property:Property nullable|nullable]]
+{{!}}&nbsp;{{#if:{{{nullable|}}}|{{{nullable}}}|}}
+{{!}}-
+![[Property:Property example|example]]
+{{!}}&nbsp;{{#if:{{{example|}}}|{{{example}}}|}}
+{{!}}-
+![[Property:Property separator|separator]]
+{{!}}&nbsp;{{#if:{{{separator|}}}|{{{separator}}}|}}
+{{!}}-
+![[Property:Property topic|topic]]
+{{!}}&nbsp;{{#if:{{{topic|}}}|{{{topic}}}|}}→{{#show: {{FULLPAGENAME}}|?Property topic}}
+{{!}}-
+{{!}}}
+}}
+[[Category:Property]]{{#default_form:Property}}
+</includeonly>

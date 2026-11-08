@@ -1,0 +1,19 @@
+{{Property
+|name=size
+|label=size
+|documentation=the display size of the field for the property
+|type=Special:Types/Number
+|index=10
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=3
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Number]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

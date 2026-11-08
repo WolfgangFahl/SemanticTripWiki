@@ -1,0 +1,20 @@
+{{Property
+|name=wikidataId
+|label=wikidata
+|documentation=Wikidata item of the location e.g. Q3519 for Bari; the link opens the map options of velorail
+|type=Special:Types/External identifier
+|index=3
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|formatterURI=https://velorail.bitplan.com/wd/$1
+|showInGrid=True
+|isLink=False
+|topic=Concept:Loc
+|storemode=prop
+}}
+* [[Has type::External identifier]]
+* External formatter uri: [[External formatter uri::https://velorail.bitplan.com/wd/$1]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

@@ -1,0 +1,23 @@
+{{Property
+|name=allowedValues
+|label=allowedValues
+|documentation=There are two ways to specified allowed Values:
+# https://semantic-mediawiki.org/wiki/Help:Special_property_Allows_value. <br>Use [[Property:Allows_value]] to see which values are allowed for certain properties
+# http://www.mediawiki.org/wiki/Extension:Semantic_Forms/Defining_forms#.27field.27_tag<br>values=possible values - Specifies a set of either possible values or autocompletion values (depending on the input type) that this field can have, overriding whatever set of values may have been set from the Semantic MediaWiki property. This set of values is separated by commas by default, but the delimiter can be modified using the delimiter= parameter.
+
+If you specify any values method number 2 will be used here which might override any allowed Values specified with method number 1.
+|type=Special:Types/Text
+|index=14
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=50
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

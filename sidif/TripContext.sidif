@@ -1,0 +1,476 @@
+#
+# Trip Context
+#
+TripContext isA Context
+"TripContext" is name of it
+"2016-01-04" is since of it
+"2026-09-11" is updated of it
+"https://contexts.bitplan.com/index.php/TripContext" is master of it
+"(c) 2016-2026 Maria & Wolfgang Fahl" is copyright of it
+"property" is storemode of it
+
+#
+# Trip Topic
+#
+Trip isA Topic
+"Trip" is name of it
+"Trips" is pluralName of it
+"A trip from a start location to a destination consisting of ordered legs" is documentation of it
+"A trip is the root of a journey: it has a start and a destination, a time span and an ordered list of [[Concept:Leg|legs]] between [[Concept:Loc|locations]]. Legs and locations are stored as subobjects on the trip page." is wikiDocumentation of it
+"File:Tour-Icon.png" is icon of it
+"/images/thumb/0/09/Tour-Icon.png/128px-Tour-Icon.png" is iconUrl of it
+"property" is defaultstoremode of it
+false is cargo of it
+"TripContext" is context of it
+
+# Properties of Trip
+Trip_name addsTo it
+Trip_title addsTo it
+Trip_from addsTo it
+Trip_to addsTo it
+Trip_start addsTo it
+Trip_end addsTo it
+Trip_participants addsTo it
+Trip_status addsTo it
+Trip_source addsTo it
+Trip_description addsTo it
+
+# property name
+Trip_name isA Property
+"name" is name of it
+"name" is label of it
+"Text" is type of it
+1 is index of it
+true is primaryKey of it
+true is mandatory of it
+"short name of the trip used as page name e.g. BariLjubljana2026" is documentation of it
+true is showInGrid of it
+"Trip" is topic of it
+
+# property title
+Trip_title isA Property
+"title" is name of it
+"title" is label of it
+"Text" is type of it
+2 is index of it
+false is primaryKey of it
+false is mandatory of it
+"human readable title of the trip" is documentation of it
+true is showInGrid of it
+"Trip" is topic of it
+
+# property from
+Trip_from isA Property
+"from" is name of it
+"from" is label of it
+"Text" is type of it
+3 is index of it
+false is primaryKey of it
+true is mandatory of it
+"id of the start location of the trip" is documentation of it
+true is showInGrid of it
+"Trip" is topic of it
+
+# property to
+Trip_to isA Property
+"to" is name of it
+"to" is label of it
+"Text" is type of it
+4 is index of it
+false is primaryKey of it
+true is mandatory of it
+"id of the destination of the trip" is documentation of it
+true is showInGrid of it
+"Trip" is topic of it
+
+# property start
+Trip_start isA Property
+"start" is name of it
+"start" is label of it
+"Date" is type of it
+5 is index of it
+false is primaryKey of it
+false is mandatory of it
+"datepicker" is inputType of it
+"first day of the trip" is documentation of it
+true is showInGrid of it
+"Trip" is topic of it
+
+# property end
+Trip_end isA Property
+"end" is name of it
+"end" is label of it
+"Date" is type of it
+6 is index of it
+false is primaryKey of it
+false is mandatory of it
+"datepicker" is inputType of it
+"last day of the trip" is documentation of it
+true is showInGrid of it
+"Trip" is topic of it
+
+# property participants
+Trip_participants isA Property
+"participants" is name of it
+"participants" is label of it
+"Text" is type of it
+7 is index of it
+false is primaryKey of it
+false is mandatory of it
+"who travels" is documentation of it
+true is showInGrid of it
+"Trip" is topic of it
+
+# property status
+Trip_status isA Property
+"status" is name of it
+"status" is label of it
+"Text" is type of it
+8 is index of it
+false is primaryKey of it
+false is mandatory of it
+"planned,ongoing,done" is allowedValues of it
+"radiobutton" is inputType of it
+"planning state of the trip" is documentation of it
+true is showInGrid of it
+"Trip" is topic of it
+
+# property source
+Trip_source isA Property
+"source" is name of it
+"source" is label of it
+"URL" is type of it
+9 is index of it
+false is primaryKey of it
+false is mandatory of it
+"url of the source the trip is derived from e.g. a YouTube playlist or a travel blog" is documentation of it
+false is showInGrid of it
+"Trip" is topic of it
+
+# property description
+Trip_description isA Property
+"description" is name of it
+"description" is label of it
+"Text" is type of it
+10 is index of it
+false is primaryKey of it
+false is mandatory of it
+"textarea" is inputType of it
+"description of the trip" is documentation of it
+false is showInGrid of it
+"Trip" is topic of it
+
+#
+# Leg Topic
+#
+Leg isA Topic
+"Leg" is name of it
+"Legs" is pluralName of it
+"A segment of a trip between two locations with one mode of transport" is documentation of it
+"A leg is one segment of a [[Concept:Trip|trip]] between two [[Concept:Loc|locations]] travelled with a single mode of transport on a given date. Legs are ordered by num within their trip page." is wikiDocumentation of it
+"File:Flag-Icon.png" is icon of it
+"/images/1/1c/Flag-Icon.png" is iconUrl of it
+"subobject" is defaultstoremode of it
+false is cargo of it
+"TripContext" is context of it
+
+# Properties of Leg
+Leg_num addsTo it
+Leg_date addsTo it
+Leg_from addsTo it
+Leg_to addsTo it
+Leg_transport addsTo it
+Leg_distance addsTo it
+Leg_duration addsTo it
+Leg_operator addsTo it
+Leg_booking addsTo it
+Leg_track addsTo it
+Leg_stay addsTo it
+Leg_notes addsTo it
+
+# property num
+Leg_num isA Property
+"num" is name of it
+"num" is label of it
+"Number" is type of it
+1 is index of it
+false is primaryKey of it
+true is mandatory of it
+"sequence number of the leg within the trip" is documentation of it
+true is showInGrid of it
+"Leg" is topic of it
+
+# property date
+Leg_date isA Property
+"date" is name of it
+"date" is label of it
+"Date" is type of it
+2 is index of it
+false is primaryKey of it
+false is mandatory of it
+"datepicker" is inputType of it
+"day the leg is travelled" is documentation of it
+true is showInGrid of it
+"Leg" is topic of it
+
+# property from
+Leg_from isA Property
+"from" is name of it
+"from" is label of it
+"Text" is type of it
+3 is index of it
+false is primaryKey of it
+true is mandatory of it
+"id of the start location of the leg" is documentation of it
+true is showInGrid of it
+"Leg" is topic of it
+
+# property to
+Leg_to isA Property
+"to" is name of it
+"to" is label of it
+"Text" is type of it
+4 is index of it
+false is primaryKey of it
+true is mandatory of it
+"id of the end location of the leg" is documentation of it
+true is showInGrid of it
+"Leg" is topic of it
+
+# property transport
+Leg_transport isA Property
+"transport" is name of it
+"transport" is label of it
+"Text" is type of it
+5 is index of it
+false is primaryKey of it
+true is mandatory of it
+"bike,train,ferry,bus,car,plane,walk" is allowedValues of it
+"radiobutton" is inputType of it
+"mode of transport of the leg" is documentation of it
+true is showInGrid of it
+"Leg" is topic of it
+
+# property distance
+Leg_distance isA Property
+"distance" is name of it
+"distance" is label of it
+"Number" is type of it
+6 is index of it
+false is primaryKey of it
+false is mandatory of it
+"distance of the leg in km" is documentation of it
+true is showInGrid of it
+"Leg" is topic of it
+
+# property duration
+Leg_duration isA Property
+"duration" is name of it
+"duration" is label of it
+"Text" is type of it
+7 is index of it
+false is primaryKey of it
+false is mandatory of it
+"travel time of the leg e.g. 2h30" is documentation of it
+true is showInGrid of it
+"Leg" is topic of it
+
+# property operator
+Leg_operator isA Property
+"operator" is name of it
+"operator" is label of it
+"Text" is type of it
+8 is index of it
+false is primaryKey of it
+false is mandatory of it
+"operator or line e.g. Trenitalia IC 604, Jadrolinija" is documentation of it
+true is showInGrid of it
+"Leg" is topic of it
+
+# property booking
+Leg_booking isA Property
+"booking" is name of it
+"booking" is label of it
+"URL" is type of it
+9 is index of it
+false is primaryKey of it
+false is mandatory of it
+"url of the booking or timetable of the leg" is documentation of it
+false is showInGrid of it
+"Leg" is topic of it
+
+# property track
+Leg_track isA Property
+"track" is name of it
+"track" is label of it
+"External identifier" is type of it
+"https://cycle.travel/map/journey/$1" is externalFormatterURI of it
+10 is index of it
+false is primaryKey of it
+false is mandatory of it
+"cycle.travel journey id of the route of the leg" is documentation of it
+true is showInGrid of it
+"Leg" is topic of it
+
+# property stay
+Leg_stay isA Property
+"stay" is name of it
+"stay" is label of it
+"Text" is type of it
+11 is index of it
+false is primaryKey of it
+false is mandatory of it
+"id of the location where the night after this leg is spent" is documentation of it
+true is showInGrid of it
+"Leg" is topic of it
+
+# property notes
+Leg_notes isA Property
+"notes" is name of it
+"notes" is label of it
+"Text" is type of it
+12 is index of it
+false is primaryKey of it
+false is mandatory of it
+"textarea" is inputType of it
+"notes on the leg" is documentation of it
+false is showInGrid of it
+"Leg" is topic of it
+
+#
+# Loc Topic
+#
+Loc isA Topic
+"Loc" is name of it
+"Locations" is pluralName of it
+"A location of a trip such as a city, station, port or hotel" is documentation of it
+"A location referenced by the legs of a [[Concept:Trip|trip]] by its id. The Wikidata item links the location to the map options of [https://velorail.bitplan.com velorail]; the coordinates feed the map of the trip." is wikiDocumentation of it
+"File:Location_pin_icon.png" is icon of it
+"/images/thumb/2/2a/Location_pin_icon.png/128px-Location_pin_icon.png" is iconUrl of it
+"subobject" is defaultstoremode of it
+false is cargo of it
+"TripContext" is context of it
+
+# Properties of Loc
+Loc_id addsTo it
+Loc_name addsTo it
+Loc_wikidataId addsTo it
+Loc_latlon addsTo it
+Loc_type addsTo it
+Loc_country addsTo it
+Loc_url addsTo it
+Loc_address addsTo it
+Loc_notes addsTo it
+
+# property id
+Loc_id isA Property
+"id" is name of it
+"id" is label of it
+"Text" is type of it
+1 is index of it
+true is primaryKey of it
+true is mandatory of it
+"id of the location referenced by legs e.g. Bari" is documentation of it
+true is showInGrid of it
+"Loc" is topic of it
+
+# property name
+Loc_name isA Property
+"name" is name of it
+"name" is label of it
+"Text" is type of it
+2 is index of it
+false is primaryKey of it
+false is mandatory of it
+"name of the location" is documentation of it
+true is showInGrid of it
+"Loc" is topic of it
+
+# property wikidataId
+Loc_wikidataId isA Property
+"wikidataId" is name of it
+"wikidata" is label of it
+"External identifier" is type of it
+"https://velorail.bitplan.com/wd/$1" is externalFormatterURI of it
+3 is index of it
+false is primaryKey of it
+false is mandatory of it
+"Wikidata item of the location e.g. Q3519 for Bari; the link opens the map options of velorail" is documentation of it
+true is showInGrid of it
+"Loc" is topic of it
+
+# property latlon
+Loc_latlon isA Property
+"latlon" is name of it
+"latlon" is label of it
+"Geographic coordinates" is type of it
+4 is index of it
+false is primaryKey of it
+false is mandatory of it
+"latitude and longitude of the location" is documentation of it
+true is showInGrid of it
+"Loc" is topic of it
+
+# property type
+Loc_type isA Property
+"type" is name of it
+"type" is label of it
+"Text" is type of it
+5 is index of it
+false is primaryKey of it
+false is mandatory of it
+"city,station,port,airport,bus stop,hotel,apartment,camping,restaurant,shop,POI" is allowedValues of it
+"combobox" is inputType of it
+"type of the location" is documentation of it
+true is showInGrid of it
+"Loc" is topic of it
+
+# property country
+Loc_country isA Property
+"country" is name of it
+"country" is label of it
+"Text" is type of it
+6 is index of it
+false is primaryKey of it
+false is mandatory of it
+"country of the location as ISO 3166-1 alpha-2 code e.g. IT" is documentation of it
+true is showInGrid of it
+"Loc" is topic of it
+
+# property url
+Loc_url isA Property
+"url" is name of it
+"url" is label of it
+"URL" is type of it
+7 is index of it
+false is primaryKey of it
+false is mandatory of it
+"url of the location for reference or booking" is documentation of it
+false is showInGrid of it
+"Loc" is topic of it
+
+# property address
+Loc_address isA Property
+"address" is name of it
+"address" is label of it
+"Text" is type of it
+8 is index of it
+false is primaryKey of it
+false is mandatory of it
+"textarea" is inputType of it
+"postal address of the location" is documentation of it
+false is showInGrid of it
+"Loc" is topic of it
+
+# property notes
+Loc_notes isA Property
+"notes" is name of it
+"notes" is label of it
+"Text" is type of it
+9 is index of it
+false is primaryKey of it
+false is mandatory of it
+"textarea" is inputType of it
+"notes on the location" is documentation of it
+false is showInGrid of it
+"Loc" is topic of it

@@ -1,0 +1,19 @@
+{{Property
+|name=namespace
+|label=namespace
+|documentation=namespace prefix
+|type=Special:Types/Text
+|index=9
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=20
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

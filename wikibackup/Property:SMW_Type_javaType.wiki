@@ -1,0 +1,19 @@
+{{Property
+|name=javaType
+|label=java Type
+|documentation=Java mapping of this type
+|type=Special:Types/Text
+|index=6
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=50
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:SMW_Type
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

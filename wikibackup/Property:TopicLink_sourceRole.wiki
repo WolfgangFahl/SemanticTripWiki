@@ -1,0 +1,19 @@
+{{Property
+|name=sourceRole
+|label=sourceRole
+|documentation=None
+|type=Special:Types/Text
+|index=3
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=50
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:TopicLink
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

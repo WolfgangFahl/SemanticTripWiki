@@ -1,0 +1,74 @@
+<noinclude>
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Form for "Context".
+
+Create a new Context by entering a new pagetitle for a Context
+into the field below.
+
+If you enter an existing Context pagetitle - you will edit the Context
+with that pagetitle.
+{{#forminput:form=Context|values from concept=Context}}
+
+=== see also ===
+see also
+* [[List of Contexts]]
+* [[Help:Context]]
+* [[Concept:Context]]
+* [[:Category:Context]]
+* [[:Template:Context]]
+* [[:Form:Context]]
+related topics:
+* [[Concept:Topic]]
+
+</noinclude><includeonly><div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{section|Context|level=1|hidden}}}
+=Context=
+{{{for template|Context}}}
+{| class="wikitable"
+! colspan='2' | Context
+|-
+! name:
+<!-- Text name -->
+|{{{field|name|property=Context name|size=80|mandatory}}}
+|-
+! purpose:
+<!-- Text purpose -->
+|{{{field|purpose|property=Context purpose}}}
+|-
+! since:
+<!-- Date since -->
+|{{{field|since|property=Context since|input type=datepicker}}}
+|-
+! updated:
+<!-- Date updated -->
+|{{{field|updated|property=Context updated|input type=datepicker}}}
+|-
+! copyright:
+<!-- Text copyright -->
+|{{{field|copyright|property=Context copyright|size=80}}}
+|-
+! demo:
+<!-- URL demo -->
+|{{{field|demo|property=Context demo}}}
+|-
+! master:
+<!-- URL master -->
+|{{{field|master|property=Context master}}}
+|-
+|-
+|}
+{{{field|storemode|default=property|hidden}}}
+{{{end template}}}
+<!-- Context -->
+        
+
+{{{section|Freitext|level=1|hidden}}}
+=Freitext=
+{{{standard input|free text|rows=10}}}
+
+{{{standard input|summary}}}
+{{{standard input|changes}}}
+
+{{{standard input|save}}}
+{{{standard input|cancel}}}
+</includeonly>
+        

@@ -1,0 +1,26 @@
+__NOCACHE__
+{{#ask: [[Topic name::Loc]]
+|mainlabel=-
+|?Topic icon = icon
+|? = Topic
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic documentation = documentation
+}}
+
+== Locations ==
+{{#ask: [[Concept:Loc]]|format=count}}
+{{#forminput:form=Loc|button text=add Loc}}
+{{#ask: [[Concept:Loc]]
+|mainlabel=Loc
+|?Loc id = id
+|?Loc name = name
+|?Loc wikidataId = wikidataId
+|?Loc latlon = latlon
+|?Loc type = type
+|?Loc country = country
+|limit=200
+|format=table
+}}
+[[:Category:Loc]]
+    

@@ -1,0 +1,20 @@
+{{Property
+|name=iconUrl
+|label=icon Url
+|documentation=the url of an icon
+|type=Special:Types/Code
+|index=6
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=80
+|uploadable=False
+|inputType=text
+|showInGrid=False
+|isLink=False
+|topic=Concept:Topic
+|storemode=prop
+}}
+* [[Has type::Code]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

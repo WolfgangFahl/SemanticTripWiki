@@ -1,0 +1,20 @@
+{{Property
+|name=track
+|label=track
+|documentation=cycle.travel journey id of the route of the leg
+|type=Special:Types/External identifier
+|index=10
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|formatterURI=https://cycle.travel/map/journey/$1
+|showInGrid=True
+|isLink=False
+|topic=Concept:Leg
+|storemode=prop
+}}
+* [[Has type::External identifier]]
+* External formatter uri: [[External formatter uri::https://cycle.travel/map/journey/$1]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

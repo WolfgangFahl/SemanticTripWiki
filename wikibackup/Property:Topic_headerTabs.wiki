@@ -1,0 +1,18 @@
+{{Property
+|name=headerTabs
+|label=headerTabs
+|documentation=shall the forms be generated with header tabs?
+|type=Special:Types/Boolean
+|index=12
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Topic
+|storemode=prop
+}}
+* [[Has type::Boolean]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

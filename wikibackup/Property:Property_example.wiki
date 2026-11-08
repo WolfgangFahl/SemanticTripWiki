@@ -1,0 +1,19 @@
+{{Property
+|name=example
+|label=example
+|documentation=a valid example entry for this property
+|type=Special:Types/Text
+|index=21
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|defaultValue=false
+|showInGrid=False
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

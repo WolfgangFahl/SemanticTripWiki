@@ -1,0 +1,18 @@
+{{Property
+|name=cargo
+|label=use cargo
+|documentation=Should the Topic be stored using the [https://www.mediawiki.org/wiki/Extension:Cargo Cargo Extension?]
+|type=Special:Types/Boolean
+|index=11
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=False
+|isLink=False
+|topic=Concept:Topic
+|storemode=prop
+}}
+* [[Has type::Boolean]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

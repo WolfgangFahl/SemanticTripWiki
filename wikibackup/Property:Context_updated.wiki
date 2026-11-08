@@ -1,0 +1,19 @@
+{{Property
+|name=updated
+|label=updated
+|documentation=most recent update of the context
+|type=Special:Types/Date
+|index=4
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=datepicker
+|showInGrid=True
+|isLink=False
+|topic=Concept:Context
+|storemode=prop
+}}
+* [[Has type::Date]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

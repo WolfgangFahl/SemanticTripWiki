@@ -1,0 +1,20 @@
+{{Property
+|name=author
+|label=author
+|documentation=the author of this action
+|type=Special:Types/Page
+|index=9
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=combobox
+|values_from=namespace=User
+|showInGrid=True
+|isLink=False
+|topic=Concept:Action
+|storemode=prop
+}}
+* [[Has type::Page]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

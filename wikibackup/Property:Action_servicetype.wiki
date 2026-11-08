@@ -1,0 +1,21 @@
+{{Property
+|name=servicetype
+|label=servicetype
+|documentation=The type of the service
+|type=Special:Types/Text
+|index=2
+|primaryKey=False
+|mandatory=True
+|namespace=Property
+|uploadable=False
+|defaultValue=Agent
+|inputType=radiobutton
+|allowedValues=Agent,WikiTask
+|showInGrid=True
+|isLink=False
+|topic=Concept:Action
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

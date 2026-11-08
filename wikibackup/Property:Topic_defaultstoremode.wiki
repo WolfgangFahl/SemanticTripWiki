@@ -1,0 +1,21 @@
+{{Property
+|name=defaultstoremode
+|label=default storemode
+|documentation=The default storemode of the topic
+|type=Special:Types/Text
+|index=9
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=50
+|uploadable=False
+|inputType=radiobutton
+|allowedValues=none,property,subobject
+|showInGrid=True
+|isLink=False
+|topic=Concept:Topic
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

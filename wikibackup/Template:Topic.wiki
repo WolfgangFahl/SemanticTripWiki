@@ -1,0 +1,152 @@
+<noinclude><!--
+  --     Copyright (C) 2015-2026 BITPlan GmbH
+  --
+  --     Pater-Delp-Str. -- 1
+  --     D-47877 -- Willich-Schiefbahn
+  --
+  --     http://www.bitplan.com
+  --
+  --
+-->
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Template for "Topic".
+=== see also ===
+see also
+* [[List of Topics]]
+* [[Help:Topic]]
+* [[Concept:Topic]]
+* [[:Category:Topic]]
+* [[:Template:Topic]]
+* [[:Form:Topic]]
+related topics:
+* [[Concept:Property]]
+
+=== Usage ===
+<pre>{{Topic
+|name=
+|pluralName=
+|isA=
+|extends=
+|icon=
+|iconUrl=
+|documentation=
+|wikiDocumentation=
+|defaultstoremode=
+|listLimit=
+|cargo=
+|headerTabs=
+|context=
+|storemode=property or subobject or none"
+}}
+</pre>
+[[Category:Template]]
+</noinclude><includeonly>{{#switch:{{{storemode|}}}
+|none=
+|subobject={{#subobject:{{{name|}}}
+|isA=Topic
+|Topic name={{{name|}}}
+|Topic pluralName={{{pluralName|}}}
+|Topic isA={{{isA|}}}
+|Topic extends={{{extends|}}}
+|Topic icon={{{icon|}}}
+|Topic iconUrl={{{iconUrl|}}}
+|Topic documentation={{{documentation|}}}
+|Topic wikiDocumentation={{{wikiDocumentation|}}}
+|Topic defaultstoremode={{{defaultstoremode|}}}
+|Topic listLimit={{{listLimit|}}}
+|Topic cargo={{{cargo|}}}
+|Topic headerTabs={{{headerTabs|}}}
+|Topic context={{{context|}}}
+}}
+|#default={{#set:
+|isA=Topic
+|Topic name={{{name|}}}
+|Topic pluralName={{{pluralName|}}}
+|Topic isA={{{isA|}}}
+|Topic extends={{{extends|}}}
+|Topic icon={{{icon|}}}
+|Topic iconUrl={{{iconUrl|}}}
+|Topic documentation={{{documentation|}}}
+|Topic wikiDocumentation={{{wikiDocumentation|}}}
+|Topic defaultstoremode={{{defaultstoremode|}}}
+|Topic listLimit={{{listLimit|}}}
+|Topic cargo={{{cargo|}}}
+|Topic headerTabs={{{headerTabs|}}}
+|Topic context={{{context|}}}
+}}
+}}
+{{#switch:{{{viewmode|}}}|hidden=|masterdetail=
+= properties =
+{{#ask:[[Concept:Property]][[Property topic::{{FULLPAGENAME}}]]
+| ?Property name = name
+| ?Property label = label
+| ?Property type = type
+| ?Property scope = scope
+| ?Property index = index
+| ?Property sortPos = sortPos
+| ?Property primaryKey = primaryKey
+| ?Property mandatory = mandatory
+| ?Property namespace = namespace
+| ?Property size = size
+| ?Property uploadable = uploadable
+| ?Property defaultValue = defaultValue
+| ?Property inputType = inputType
+| ?Property allowedValues = allowedValues
+| ?Property documentation = documentation
+| ?Property values_from = values_from
+| ?Property externalFormatterURI = externalFormatterURI
+| ?Property showInGrid = showInGrid
+| ?Property isLink = isLink
+| ?Property nullable = nullable
+| ?Property example = example
+| ?Property separator = separator
+| ?Property topic = topic
+}}|#default={{{!}} class='wikitable'
+! colspan='2' {{!}}Topic
+{{!}}-
+{{#switch:{{{storemode|}}}|property=
+! colspan='2' style='text-align:left' {{!}} {{Icon|name=edit|size=24}}{{Link|target=Special:FormEdit/Topic/{{FULLPAGENAME}}|title=edit}}
+{{!}}-
+}}
+![[Property:Topic name|name]]
+{{!}}&nbsp;{{#if:{{{name|}}}|{{{name}}}|}}
+{{!}}-
+![[Property:Topic pluralName|pluralName]]
+{{!}}&nbsp;{{#if:{{{pluralName|}}}|{{{pluralName}}}|}}
+{{!}}-
+![[Property:Topic isA|isA]]
+{{!}}&nbsp;{{#if:{{{isA|}}}|{{{isA}}}|}}
+{{!}}-
+![[Property:Topic extends|extends]]
+{{!}}&nbsp;{{#if:{{{extends|}}}|{{{extends}}}|}}
+{{!}}-
+![[Property:Topic icon|icon]]
+{{!}}&nbsp;{{#if:{{{icon|}}}|{{{icon}}}|}}→[[{{{icon|}}}]]
+{{!}}-
+![[Property:Topic iconUrl|iconUrl]]
+{{!}}&nbsp;{{#if:{{{iconUrl|}}}|{{{iconUrl}}}|}}
+{{!}}-
+![[Property:Topic documentation|documentation]]
+{{!}}&nbsp;{{#if:{{{documentation|}}}|{{{documentation}}}|}}
+{{!}}-
+![[Property:Topic wikiDocumentation|wikiDocumentation]]
+{{!}}&nbsp;{{#if:{{{wikiDocumentation|}}}|{{{wikiDocumentation}}}|}}
+{{!}}-
+![[Property:Topic defaultstoremode|defaultstoremode]]
+{{!}}&nbsp;{{#if:{{{defaultstoremode|}}}|{{{defaultstoremode}}}|}}
+{{!}}-
+![[Property:Topic listLimit|listLimit]]
+{{!}}&nbsp;{{#if:{{{listLimit|}}}|{{{listLimit}}}|}}
+{{!}}-
+![[Property:Topic cargo|cargo]]
+{{!}}&nbsp;{{#if:{{{cargo|}}}|{{{cargo}}}|}}
+{{!}}-
+![[Property:Topic headerTabs|headerTabs]]
+{{!}}&nbsp;{{#if:{{{headerTabs|}}}|{{{headerTabs}}}|}}
+{{!}}-
+![[Property:Topic context|context]]
+{{!}}&nbsp;{{#if:{{{context|}}}|{{{context}}}|}}→{{#show: {{FULLPAGENAME}}|?Topic context}}
+{{!}}-
+{{!}}}
+}}
+[[Category:Topic]]{{#default_form:Topic}}
+</includeonly>

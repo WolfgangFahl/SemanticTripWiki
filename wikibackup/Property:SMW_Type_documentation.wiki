@@ -1,0 +1,19 @@
+{{Property
+|name=documentation
+|label=documentation
+|documentation=The documentation of this Semantic Media Wiki type
+|type=Special:Types/Text
+|index=2
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=50
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:SMW_Type
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

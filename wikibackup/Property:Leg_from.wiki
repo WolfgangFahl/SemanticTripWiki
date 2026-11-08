@@ -1,0 +1,18 @@
+{{Property
+|name=from
+|label=from
+|documentation=id of the start location of the leg
+|type=Special:Types/Text
+|index=3
+|primaryKey=False
+|mandatory=True
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Leg
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

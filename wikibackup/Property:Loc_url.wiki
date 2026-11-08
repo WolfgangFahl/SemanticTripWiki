@@ -1,0 +1,18 @@
+{{Property
+|name=url
+|label=url
+|documentation=url of the location for reference or booking
+|type=Special:Types/URL
+|index=7
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=False
+|isLink=False
+|topic=Concept:Loc
+|storemode=prop
+}}
+* [[Has type::URL]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

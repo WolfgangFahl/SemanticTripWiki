@@ -1,0 +1,19 @@
+{{Property
+|name=end
+|label=end
+|documentation=last day of the trip
+|type=Special:Types/Date
+|index=6
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=datepicker
+|showInGrid=True
+|isLink=False
+|topic=Concept:Trip
+|storemode=prop
+}}
+* [[Has type::Date]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

@@ -1,0 +1,18 @@
+{{Property
+|name=to
+|label=to
+|documentation=id of the destination of the trip
+|type=Special:Types/Text
+|index=4
+|primaryKey=False
+|mandatory=True
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Trip
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

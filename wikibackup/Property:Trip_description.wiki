@@ -1,0 +1,19 @@
+{{Property
+|name=description
+|label=description
+|documentation=description of the trip
+|type=Special:Types/Text
+|index=10
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=textarea
+|showInGrid=False
+|isLink=False
+|topic=Concept:Trip
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

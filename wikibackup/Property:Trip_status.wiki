@@ -1,0 +1,20 @@
+{{Property
+|name=status
+|label=status
+|documentation=planning state of the trip
+|type=Special:Types/Text
+|index=8
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|inputType=radiobutton
+|allowedValues=planned,ongoing,done
+|showInGrid=True
+|isLink=False
+|topic=Concept:Trip
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

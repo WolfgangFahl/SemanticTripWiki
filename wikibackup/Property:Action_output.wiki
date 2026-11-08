@@ -1,0 +1,20 @@
+{{Property
+|name=output
+|label=output
+|documentation=the typed description of the output - parameter names and types like the input; prose belongs into the comment field
+|type=Special:Types/Code
+|index=7
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=300
+|uploadable=False
+|inputType=textarea
+|showInGrid=True
+|isLink=False
+|topic=Concept:Action
+|storemode=prop
+}}
+* [[Has type::Code]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

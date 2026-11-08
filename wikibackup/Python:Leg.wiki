@@ -1,0 +1,63 @@
+from dataclasses import dataclass
+from typing import Optional
+import dacite
+@dataclass
+class Leg:
+    """
+    A segment of a trip between two locations with one mode of transport
+    """
+    pageTitle:str
+    num:Optional[float] # sequence number of the leg within the trip
+    date:Optional[str] # day the leg is travelled
+    from:Optional[str] # id of the start location of the leg
+    to:Optional[str] # id of the end location of the leg
+    transport:Optional[str] # mode of transport of the leg
+    distance:Optional[float] # distance of the leg in km
+    duration:Optional[str] # travel time of the leg e.g. 2h30
+    operator:Optional[str] # operator or line e.g. Trenitalia IC 604, Jadrolinija
+    booking:Optional[str] # url of the booking or timetable of the leg
+    track:Optional[str] # cycle.travel journey id of the route of the leg
+    stay:Optional[str] # id of the location where the night after this leg is spent
+    notes:Optional[str] # notes on the leg
+
+    @classmethod
+    def askQuery(cls):
+        """
+        get the ask Query for Leg
+
+        Returns:
+            str: the mediawiki markup for the ask query
+        """
+        ask="""{{#ask: [[Concept:Leg]]
+|mainlabel=pageTitle
+|?Leg num = num
+|?Leg date = date
+|?Leg from = from
+|?Leg to = to
+|?Leg transport = transport
+|?Leg distance = distance
+|?Leg duration = duration
+|?Leg operator = operator
+|?Leg booking = booking
+|?Leg track = track
+|?Leg stay = stay
+|?Leg notes = notes
+|limit=10000
+|format=table
+}}"""
+        return ask
+
+    @classmethod
+    def fromDict(cls,data:dict):
+        """
+        create a Leg from the given dict
+
+        Args:
+            data(dict): the dict to create the Leg from
+
+        Returns:
+            Leg: the freshly created Leg
+        """
+        leg=dacite.from_dict(data_class=cls,data=data)
+        return leg
+        

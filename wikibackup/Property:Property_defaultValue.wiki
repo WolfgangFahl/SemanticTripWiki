@@ -1,0 +1,21 @@
+{{Property
+|name=defaultValue
+|label=default
+|documentation=default value - Specifies a default value for this field. For date-related fields, default=now will set the value to the current date and possibly time. For text fields, default=current user will set the value to the username of the user adding this page. For the checkbox input type, default=yes will check the checkbox by default. (The 'checkboxes' input type, on the other hand, like the 'listbox' type, requires specifying the actual values, like default=Value A, Value C.) You can also include templates, parser functions, and magic words within the 'default=' value.
+
+see http://www.mediawiki.org/wiki/Extension:Semantic_Forms/Defining_forms#.27field.27_tag (default)
+|type=Special:Types/Code
+|index=12
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|size=80
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Code]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

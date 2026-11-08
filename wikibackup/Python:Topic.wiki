@@ -1,0 +1,67 @@
+from dataclasses import dataclass
+from typing import Optional
+import dacite
+@dataclass
+class Topic:
+    """
+    A Topic is a Concept/Class/Thing/Entity
+    """
+    pageTitle:str
+    name:Optional[str] # The name of the topic
+    pluralName:Optional[str] # The plural of a topic name. E.g. for the topic 'City' the pluralName is 'Cities'. If no pluralName is specified an 's' is appended. E.g. for the topic 'Book' the default pluralName is 'Books'
+    isA:Optional[str] # The metamodel kind of the topic
+    extends:Optional[str] # this topic specializes the topic it extends (if any)
+    icon:Optional[str] # an Icon for the topic
+    iconUrl:Optional[str] # the url of an icon
+    documentation:Optional[str] # The plaintext documentation of a Topic. Please do not use markup for this.
+    wikiDocumentation:Optional[str] # Documentation of the Topic using MediaWiki / Semantic Mediawiki markup
+    defaultstoremode:Optional[str] # The default storemode of the topic
+    listLimit:Optional[float] # What is the default #ask list limit for this Topic?
+    cargo:Optional[bool] # Should the Topic be stored using the [https://www.mediawiki.org/wiki/Extension:Cargo Cargo Extension?]
+    headerTabs:Optional[bool] # shall the forms be generated with header tabs?
+    context:Optional[str] # the context this topic belongs to
+
+    @classmethod
+    def askQuery(cls):
+        """
+        get the ask Query for Topic
+
+        Returns:
+            str: the mediawiki markup for the ask query
+        """
+        ask="""{{#ask: [[Concept:Topic]]
+|mainlabel=pageTitle
+|?Topic name = name
+|?Topic pluralName = pluralName
+|?Topic isA = isA
+|?Topic extends = extends
+|?Topic icon = icon
+|?Topic iconUrl = iconUrl
+|?Topic documentation = documentation
+|?Topic wikiDocumentation = wikiDocumentation
+|?Topic defaultstoremode = defaultstoremode
+|?Topic listLimit = listLimit
+|?Topic cargo = cargo
+|?Topic headerTabs = headerTabs
+|?Topic context = context
+|limit=10000
+|format=table
+|sort=Topic name
+|order=ascending
+}}"""
+        return ask
+
+    @classmethod
+    def fromDict(cls,data:dict):
+        """
+        create a Topic from the given dict
+
+        Args:
+            data(dict): the dict to create the Topic from
+
+        Returns:
+            Topic: the freshly created Topic
+        """
+        topic=dacite.from_dict(data_class=cls,data=data)
+        return topic
+        

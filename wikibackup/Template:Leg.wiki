@@ -1,0 +1,118 @@
+<noinclude><!--
+  --     Copyright (C) 2015-2026 BITPlan GmbH
+  --
+  --     Pater-Delp-Str. -- 1
+  --     D-47877 -- Willich-Schiefbahn
+  --
+  --     http://www.bitplan.com
+  --
+  --
+-->
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Template for "Leg".
+=== see also ===
+see also
+* [[List of Legs]]
+* [[Help:Leg]]
+* [[Concept:Leg]]
+* [[:Category:Leg]]
+* [[:Template:Leg]]
+* [[:Form:Leg]]
+
+=== Usage ===
+<pre>{{Leg
+|num=
+|date=
+|from=
+|to=
+|transport=
+|distance=
+|duration=
+|operator=
+|booking=
+|track=
+|stay=
+|notes=
+|storemode=property or subobject or none"
+}}
+</pre>
+[[Category:Template]]
+</noinclude><includeonly>{{#switch:{{{storemode|}}}
+|none=
+|subobject={{#subobject:-
+|isA=Leg
+|Leg num={{{num|}}}
+|Leg date={{{date|}}}
+|Leg from={{{from|}}}
+|Leg to={{{to|}}}
+|Leg transport={{{transport|}}}
+|Leg distance={{{distance|}}}
+|Leg duration={{{duration|}}}
+|Leg operator={{{operator|}}}
+|Leg booking={{{booking|}}}
+|Leg track={{{track|}}}
+|Leg stay={{{stay|}}}
+|Leg notes={{{notes|}}}
+}}
+|#default={{#set:
+|isA=Leg
+|Leg num={{{num|}}}
+|Leg date={{{date|}}}
+|Leg from={{{from|}}}
+|Leg to={{{to|}}}
+|Leg transport={{{transport|}}}
+|Leg distance={{{distance|}}}
+|Leg duration={{{duration|}}}
+|Leg operator={{{operator|}}}
+|Leg booking={{{booking|}}}
+|Leg track={{{track|}}}
+|Leg stay={{{stay|}}}
+|Leg notes={{{notes|}}}
+}}
+}}
+{{#switch:{{{viewmode|}}}|hidden=|masterdetail=
+|#default={{{!}} class='wikitable'
+! colspan='2' {{!}}Leg
+{{!}}-
+{{#switch:{{{storemode|}}}|property=
+! colspan='2' style='text-align:left' {{!}} {{Icon|name=edit|size=24}}{{Link|target=Special:FormEdit/Leg/{{FULLPAGENAME}}|title=edit}}
+{{!}}-
+}}
+![[Property:Leg num|num]]
+{{!}}&nbsp;{{#if:{{{num|}}}|{{{num}}}|}}
+{{!}}-
+![[Property:Leg date|date]]
+{{!}}&nbsp;{{#if:{{{date|}}}|{{{date}}}|}}
+{{!}}-
+![[Property:Leg from|from]]
+{{!}}&nbsp;{{#if:{{{from|}}}|{{{from}}}|}}
+{{!}}-
+![[Property:Leg to|to]]
+{{!}}&nbsp;{{#if:{{{to|}}}|{{{to}}}|}}
+{{!}}-
+![[Property:Leg transport|transport]]
+{{!}}&nbsp;{{#if:{{{transport|}}}|{{{transport}}}|}}
+{{!}}-
+![[Property:Leg distance|distance]]
+{{!}}&nbsp;{{#if:{{{distance|}}}|{{{distance}}}|}}
+{{!}}-
+![[Property:Leg duration|duration]]
+{{!}}&nbsp;{{#if:{{{duration|}}}|{{{duration}}}|}}
+{{!}}-
+![[Property:Leg operator|operator]]
+{{!}}&nbsp;{{#if:{{{operator|}}}|{{{operator}}}|}}
+{{!}}-
+![[Property:Leg booking|booking]]
+{{!}}&nbsp;{{#if:{{{booking|}}}|{{{booking}}}|}}
+{{!}}-
+![[Property:Leg track|track]]
+{{!}}&nbsp;{{#if:{{{track|}}}|{{{track}}}|}}→{{#show: {{FULLPAGENAME}}|?Leg track}}
+{{!}}-
+![[Property:Leg stay|stay]]
+{{!}}&nbsp;{{#if:{{{stay|}}}|{{{stay}}}|}}
+{{!}}-
+![[Property:Leg notes|notes]]
+{{!}}&nbsp;{{#if:{{{notes|}}}|{{{notes}}}|}}
+{{!}}-
+{{!}}}
+}}
+</includeonly>

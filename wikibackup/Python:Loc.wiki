@@ -1,0 +1,57 @@
+from dataclasses import dataclass
+from typing import Optional
+import dacite
+@dataclass
+class Loc:
+    """
+    A location of a trip such as a city, station, port or hotel
+    """
+    pageTitle:str
+    id:Optional[str] # id of the location referenced by legs e.g. Bari
+    name:Optional[str] # name of the location
+    wikidataId:Optional[str] # Wikidata item of the location e.g. Q3519 for Bari; the link opens the map options of velorail
+    latlon:Optional[str] # latitude and longitude of the location
+    type:Optional[str] # type of the location
+    country:Optional[str] # country of the location as ISO 3166-1 alpha-2 code e.g. IT
+    url:Optional[str] # url of the location for reference or booking
+    address:Optional[str] # postal address of the location
+    notes:Optional[str] # notes on the location
+
+    @classmethod
+    def askQuery(cls):
+        """
+        get the ask Query for Loc
+
+        Returns:
+            str: the mediawiki markup for the ask query
+        """
+        ask="""{{#ask: [[Concept:Loc]]
+|mainlabel=pageTitle
+|?Loc id = id
+|?Loc name = name
+|?Loc wikidataId = wikidataId
+|?Loc latlon = latlon
+|?Loc type = type
+|?Loc country = country
+|?Loc url = url
+|?Loc address = address
+|?Loc notes = notes
+|limit=10000
+|format=table
+}}"""
+        return ask
+
+    @classmethod
+    def fromDict(cls,data:dict):
+        """
+        create a Loc from the given dict
+
+        Args:
+            data(dict): the dict to create the Loc from
+
+        Returns:
+            Loc: the freshly created Loc
+        """
+        loc=dacite.from_dict(data_class=cls,data=data)
+        return loc
+        

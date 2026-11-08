@@ -1,0 +1,80 @@
+<noinclude>
+This is the [https://wiki.bitplan.com/index.php/ProfiWiki BITPlan Y-Prinzip ProfiWiki]-Form for "Loc".
+
+Create a new Loc by entering a new pagetitle for a Loc
+into the field below.
+
+If you enter an existing Loc pagetitle - you will edit the Loc
+with that pagetitle.
+{{#forminput:form=Loc|values from concept=Loc}}
+
+=== see also ===
+see also
+* [[List of Locations]]
+* [[Help:Loc]]
+* [[Concept:Loc]]
+* [[:Category:Loc]]
+* [[:Template:Loc]]
+* [[:Form:Loc]]
+
+</noinclude><includeonly><div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{section|Loc|level=1|hidden}}}
+=Loc=
+{{{for template|Loc|multiple}}}
+{| class="wikitable"
+! colspan='2' | Loc
+|-
+! id:
+<!-- Text id -->
+|{{{field|id|property=Loc id|mandatory}}}
+|-
+! name:
+<!-- Text name -->
+|{{{field|name|property=Loc name}}}
+|-
+! wikidata:
+<!-- External identifier wikidataId -->
+|{{{field|wikidataId|property=Loc wikidataId}}}
+|-
+! latlon:
+<!-- Geographic coordinates latlon -->
+|{{{field|latlon|property=Loc latlon}}}
+|-
+! type:
+<!-- Text type -->
+|{{{field|type|property=Loc type|input type=combobox|values=city,station,port,airport,bus stop,hotel,apartment,camping,restaurant,shop,POI}}}
+|-
+! country:
+<!-- Text country -->
+|{{{field|country|property=Loc country}}}
+|-
+! url:
+<!-- URL url -->
+|{{{field|url|property=Loc url}}}
+|-
+! address:
+<!-- Text address -->
+|{{{field|address|property=Loc address|input type=textarea|editor=wikieditor}}}
+|-
+! notes:
+<!-- Text notes -->
+|{{{field|notes|property=Loc notes|input type=textarea|editor=wikieditor}}}
+|-
+|-
+|}
+{{{field|storemode|default=subobject|hidden}}}
+{{{end template}}}
+<!-- Loc -->
+        
+
+{{{section|Freitext|level=1|hidden}}}
+=Freitext=
+{{{standard input|free text|rows=10}}}
+
+{{{standard input|summary}}}
+{{{standard input|changes}}}
+
+{{{standard input|save}}}
+{{{standard input|cancel}}}
+</includeonly>
+        

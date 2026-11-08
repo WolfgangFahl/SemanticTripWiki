@@ -1,0 +1,19 @@
+{{Property
+|name=nullable
+|label=allow nulls?
+|documentation=should nullvalues be allowed and value set to NULL when empty?
+|type=Special:Types/Boolean
+|index=20
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|defaultValue=false
+|showInGrid=False
+|isLink=False
+|topic=Concept:Property
+|storemode=prop
+}}
+* [[Has type::Boolean]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

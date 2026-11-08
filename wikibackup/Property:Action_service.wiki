@@ -1,0 +1,18 @@
+{{Property
+|name=service
+|label=service
+|documentation=The service to be used
+|type=Special:Types/URL
+|index=3
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Action
+|storemode=prop
+}}
+* [[Has type::URL]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}

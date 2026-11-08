@@ -1,0 +1,18 @@
+{{Property
+|name=participants
+|label=participants
+|documentation=who travels
+|type=Special:Types/Text
+|index=7
+|primaryKey=False
+|mandatory=False
+|namespace=Property
+|uploadable=False
+|showInGrid=True
+|isLink=False
+|topic=Concept:Trip
+|storemode=prop
+}}
+* [[Has type::Text]]
+
+This is a Property with type {{#show: {{FULLPAGENAMEE}} | ?Property type#- }}
