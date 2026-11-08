@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "SemanticTripWiki"
+description = "Reel Driven Development by example: a Semantic MediaWiki trip documentation wiki specified by reels and set up with a one line install"
+
+authors = [
+  { name = "Wolfgang Fahl", email = "wf@bitplan.com" }
+]
+maintainers = [
+  { name = "Wolfgang Fahl", email = "wf@bitplan.com" }
+]
+readme = "README.md"
+license = "Apache-2.0"
+
+dependencies = [
+  # https://pypi.org/project/pybasemkit/
+  "pybasemkit>=0.2.2",
+]
+requires-python = ">=3.10"
+
+classifiers = [
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13"
+]
+
+dynamic = ["version"]
+
+[project.urls]
+Home = "https://github.com/WolfgangFahl/SemanticTripWiki"
+Documentation = "https://wiki.bitplan.com/index.php/SemanticTripWiki"
+Source = "https://github.com/WolfgangFahl/SemanticTripWiki"
+
+[tool.hatch.version]
+path = "semantictripwiki/__init__.py"
+
+[project.optional-dependencies]
+test = []
+
+[tool.hatch.build.targets.wheel]
+only-include = ["semantictripwiki"]
+
+[tool.hatch.build.targets.wheel.sources]
+"semantictripwiki" = "semantictripwiki"
