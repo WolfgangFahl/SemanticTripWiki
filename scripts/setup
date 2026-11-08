@@ -145,6 +145,31 @@ ask() {
 }
 
 #
+# check_compose - check docker compose, which Canasta needs to start its stack
+#
+check_compose() {
+  if docker compose version >/dev/null 2>&1; then
+    success "$(docker compose version | head -1) is installed"
+    return 0
+  fi
+  warn "docker compose is missing - Canasta needs it to start the trip wiki"
+  case "$(uname)" in
+    Darwin)
+      action "OrbStack and Docker Desktop include docker compose - update or reinstall your docker engine"
+      ;;
+    Linux)
+      action "install with: sudo apt-get install -y docker-compose-v2"
+      if ask "install docker compose now?"; then
+        sudo apt-get install -y docker-compose-v2 || error "docker compose installation failed"
+        success "docker compose installed"
+        return 0
+      fi
+      ;;
+  esac
+  return 1
+}
+
+#
 # check_docker - check docker, hint and offer to install it if missing
 #
 check_docker() {
@@ -154,7 +179,8 @@ check_docker() {
     local l_info
     if l_info=$(docker info 2>&1); then
       success "docker $(docker --version | cut -d' ' -f3 | tr -d ',') is installed and running"
-      return 0
+      check_compose
+      return $?
     fi
     if [[ "$l_info" == *"permission denied"* ]]; then
       warn "docker is running but user $USER may not use it"
@@ -178,9 +204,9 @@ check_docker() {
       fi
       ;;
     Linux)
-      AUTOINSTALL_HINT_ONLY=1 autoinstall docker docker.io docker
+      action "install with: sudo apt-get install -y docker.io docker-compose-v2"
       if ask "install docker now?"; then
-        autoinstall docker docker.io docker || error "docker installation failed"
+        sudo apt-get install -y docker.io docker-compose-v2 || error "docker installation failed"
         success "docker installed"
         return 0
       fi
