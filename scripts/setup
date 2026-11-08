@@ -115,6 +115,12 @@ TRIPWIKI_ID="${TRIPWIKI_ID:-tripwiki}"
 TRIPWIKI_HOST="${TRIPWIKI_HOST:-localhost}"
 HTTP_PORT="${HTTP_PORT:-8080}"
 HTTPS_PORT="${HTTPS_PORT:-8443}"
+# content of the wiki: wikibackup (restore the pages of the repository) or ypgen (generate them from the sidif masters)
+TRIPWIKI_CONTENT="${TRIPWIKI_CONTENT:-wikibackup}"
+REPO_URL="https://github.com/WolfgangFahl/SemanticTripWiki"
+REPO_DIR="${REPO_DIR:-$HOME/source/python/SemanticTripWiki}"
+# pipx installs the python tools here
+export PATH="$HOME/.local/bin:$PATH"
 EXTENSIONS="ParserFunctions,Variables,PageForms,SemanticResultFormats,Maps,HeaderTabs,AdminLinks,Mermaid,Scribunto,MagicNoCache"
 
 #
@@ -277,6 +283,10 @@ free_port() {
 create_instance() {
   if [[ -d "$CANASTA_DIR/$TRIPWIKI_ID" ]]; then
     success "Canasta instance $TRIPWIKI_ID exists in $CANASTA_DIR/$TRIPWIKI_ID"
+    if [[ "$TRIPWIKI_HOST" == "localhost" ]] && ! grep -q "^TLS_MODE=off" "$CANASTA_DIR/$TRIPWIKI_ID/.env"; then
+      action "switching the local wiki $TRIPWIKI_ID to plain HTTP"
+      canasta config set -i "$TRIPWIKI_ID" TLS_MODE=off || error "canasta config set TLS_MODE=off failed"
+    fi
     return 0
   fi
   mkdir -p "$CANASTA_DIR" || error "can not create $CANASTA_DIR"
@@ -291,7 +301,10 @@ create_instance() {
   fi
   printf "HTTP_PORT=%s\nHTTPS_PORT=%s\n" "$HTTP_PORT" "$HTTPS_PORT" > "$l_envfile"
   action "creating Canasta instance $TRIPWIKI_ID at $TRIPWIKI_HOST port $HTTPS_PORT"
-  (cd "$CANASTA_DIR" && canasta create -i "$TRIPWIKI_ID" -w "$TRIPWIKI_ID" -n "$TRIPWIKI_HOST" -e "$l_envfile") || error "canasta create failed"
+  # a local wiki is served over plain HTTP: the certificate of the Canasta edge CA is not trusted by the python tools
+  local l_tls=""
+  [[ "$TRIPWIKI_HOST" == "localhost" ]] && l_tls="--skip-tls"
+  (cd "$CANASTA_DIR" && canasta create -i "$TRIPWIKI_ID" -w "$TRIPWIKI_ID" -n "$TRIPWIKI_HOST" -e "$l_envfile" $l_tls) || error "canasta create failed"
   success "Canasta instance $TRIPWIKI_ID created - the WikiSysop password is in $CANASTA_DIR/$TRIPWIKI_ID/admin-password_$TRIPWIKI_ID"
 }
 
@@ -318,6 +331,93 @@ EOF
 }
 
 #
+# get_repo - clone the repository or bring it up to date, it holds the sidif masters and the wikibackup pages
+#
+get_repo() {
+  command -v git >/dev/null 2>&1 || error "git is missing - install it with your package manager"
+  if [[ -d "$REPO_DIR/.git" ]]; then
+    git -C "$REPO_DIR" pull -q --ff-only || error "git pull in $REPO_DIR failed"
+    success "repository $REPO_DIR is up to date"
+  else
+    mkdir -p "$(dirname "$REPO_DIR")" || error "can not create $(dirname "$REPO_DIR")"
+    git clone -q "$REPO_URL" "$REPO_DIR" || error "git clone of $REPO_URL failed"
+    success "repository cloned to $REPO_DIR"
+  fi
+}
+
+#
+# install_python_tools - install wikiuser, wikirestore and ypgen with pipx if missing
+#
+install_python_tools() {
+  if ! command -v pipx >/dev/null 2>&1; then
+    warn "pipx is missing - it installs the python tools of the trip wiki"
+    case "$(uname)" in
+      Darwin) action "install pipx, e.g. with: sudo port install pipx or brew install pipx" ;;
+      Linux)  action "install with: sudo apt-get install -y pipx" ;;
+    esac
+    exit 1
+  fi
+  command -v wikirestore >/dev/null 2>&1 || pipx install py-3rdparty-mediawiki || error "pipx install py-3rdparty-mediawiki failed"
+  command -v ypgen >/dev/null 2>&1 || pipx install py-yprinciple-gen || error "pipx install py-yprinciple-gen failed"
+  success "python tools wikiuser, wikirestore and ypgen are installed"
+}
+
+#
+# register_wiki - make the wiki known to the python tools with the generated WikiSysop credentials
+#
+register_wiki() {
+  local l_ini="$HOME/.mediawiki-japi/${USER}_${TRIPWIKI_ID}.ini"
+  local l_dir="$CANASTA_DIR/$TRIPWIKI_ID"
+  local l_url
+  l_url=$(grep "^MW_SITE_SERVER=" "$l_dir/.env" | cut -d= -f2)
+  [[ -n "$l_url" ]] || error "MW_SITE_SERVER missing in $l_dir/.env"
+  # registered for the current url of the wiki - it changes e.g. with TLS_MODE
+  if [[ -f "$l_ini" ]] && grep -q "$l_url" "$l_ini"; then
+    success "wiki $TRIPWIKI_ID is registered for $l_url"
+    return 0
+  fi
+  [[ -f "$l_dir/admin-password_$TRIPWIKI_ID" ]] || error "admin-password_$TRIPWIKI_ID missing in $l_dir"
+  wikiuser -w "$TRIPWIKI_ID" -l "$l_url" -s /w -v "MediaWiki 1.43" -u WikiSysop \
+    -p "$(cat "$l_dir/admin-password_$TRIPWIKI_ID")" --smw true -y >/dev/null || error "wikiuser registration failed"
+  success "wiki $TRIPWIKI_ID registered for $l_url"
+}
+
+#
+# create_content - create the pages of the trip wiki from the repository
+#
+create_content() {
+  local l_sidif
+  case "$TRIPWIKI_CONTENT" in
+    wikibackup)
+      local l_list
+      l_list=$(mktemp)
+      ls "$REPO_DIR/wikibackup" | sed 's/\.wiki$//' > "$l_list"
+      action "restoring $(wc -l < "$l_list" | tr -d ' ') pages from $REPO_DIR/wikibackup"
+      local l_out
+      local l_rc
+      # wikirestore exits with 0 on a failed login, so its output is checked
+      l_out=$(wikirestore -t "$TRIPWIKI_ID" --backupPath "$REPO_DIR/wikibackup" --listFile "$l_list" 2>&1)
+      l_rc=$?
+      rm -f "$l_list"
+      if [[ $l_rc -ne 0 || "$l_out" == *"❌"* || "$l_out" == *"Exception"* ]]; then
+        echo "$l_out" | tail -5 >&2
+        error "wikirestore failed"
+      fi
+      ;;
+    ypgen)
+      for l_sidif in MetaModel TripContext; do
+        action "generating $l_sidif with ypgen"
+        ypgen --sidif "$REPO_DIR/sidif/$l_sidif.sidif" -ga --wikiId "$TRIPWIKI_ID" -nd || error "ypgen for $l_sidif failed"
+      done
+      ;;
+    *)
+      error "TRIPWIKI_CONTENT must be wikibackup or ypgen, not $TRIPWIKI_CONTENT"
+      ;;
+  esac
+  success "content created via $TRIPWIKI_CONTENT"
+}
+
+#
 # setup - set up the trip wiki
 #
 setup() {
@@ -325,8 +425,13 @@ setup() {
   install_canasta
   create_instance
   enable_smw
+  get_repo
+  install_python_tools
+  register_wiki
+  create_content
   local l_code
-  local l_url="https://$TRIPWIKI_HOST:$(grep HTTPS_PORT "$CANASTA_DIR/$TRIPWIKI_ID.env" 2>/dev/null | cut -d= -f2)"
+  local l_url
+  l_url=$(grep "^MW_SITE_SERVER=" "$CANASTA_DIR/$TRIPWIKI_ID/.env" | cut -d= -f2)
   l_code=$(curl -sk -o /dev/null -w "%{http_code}" "$l_url/wiki/Main_Page")
   if [[ "$l_code" == "200" ]]; then
     success "the trip wiki answers at $l_url"
